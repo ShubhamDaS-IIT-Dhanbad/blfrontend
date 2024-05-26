@@ -85,7 +85,7 @@ function CategoryCarousal() {
                 </Slider>
             </div>
             <div className="custom-arrow prev-arrow" onClick={goToNextSlide}>
-                < IoIosArrowForward className='arrow' size={39} />
+                < IoIosArrowForward className='arrow' size={39}/>
             </div>
         </div>
     );

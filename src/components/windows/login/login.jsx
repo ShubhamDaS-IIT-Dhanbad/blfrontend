@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { setIsAuthenticated } from '../../../redux/features/logInLogout/authenticationSlice.jsx';
-import { fetchProducts} from '../../../redux/features/products/productSlics.jsx';
+import { fetchProducts } from '../../../redux/features/products/productSlics.jsx';
 import './login.css';
 
 function LoginPage() {
@@ -18,22 +18,26 @@ function LoginPage() {
         e.preventDefault();
         setError('');
         setIsLoading(true);
-        try {   console.log("response")
+
+        try {
+            console.log('Submitting mobile number:', mobileNumber); // Debug log
             const response = await axios.post('https://bharat-lbackend.vercel.app/api/v1/account/login', { mobileNumber });
-            console.log("response")
+            console.log('Response:', response); // Debug log
+
             if (response.status === 200) {
                 localStorage.setItem('userData', JSON.stringify(response.data.data.user));
                 dispatch(setIsAuthenticated(true));
 
                 const pinCodesString = response.data.data.user && response.data.data.user.pinCodes 
-                                    ? response.data.data.user.pinCodes.join(', ') : '';
-                dispatch(fetchProducts({pinCodesString}));
+                                        ? response.data.data.user.pinCodes.join(', ') : '';
+                dispatch(fetchProducts({ pinCodesString }));
 
                 navigate("/");
             } else {
                 setError('Login failed. Please check your mobile number and try again.');
             }
         } catch (error) {
+            console.error('Error during login:', error); // Debug log
             setError('Error: ' + (error.response?.data?.message || error.message));
         } finally {
             setIsLoading(false);
@@ -91,3 +95,4 @@ function LoginPage() {
 }
 
 export default LoginPage;
+

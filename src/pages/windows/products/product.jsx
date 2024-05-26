@@ -69,7 +69,7 @@ const Product = ({category}) => {
   }
 
   if (!products || products.length === 0) {
-    return <div className="empty-message">No products available</div>;
+    return <div className="empty-message" style={{minHeight:"100vh"}}>No products available</div>;
   }
 
   const filteredProducts = products.filter(product => {

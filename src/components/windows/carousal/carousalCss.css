@@ -5,9 +5,7 @@
 .CarouselSlide {
     display: flex;
     width: 100vw;
-    height: 70vh;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory; /* For smooth scrolling */
+    background-size: cover;
 }
 
 .CarouselImage {

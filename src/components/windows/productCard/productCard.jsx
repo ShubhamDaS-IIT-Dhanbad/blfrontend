@@ -1,11 +1,11 @@
 import React from 'react';
-import "./productCardCss.css";
-
 import { useNavigate } from 'react-router-dom';
 import Rating from "react-rating-stars-component";
+import "./productCardCss.css";
 
 function ProductCard({ id, image, title, price }) {
     const navigate = useNavigate();
+    
     return (
         <div className="product-card">
             <div className="product-card-top" onClick={() => navigate(`/product/${id}`)}>
@@ -19,7 +19,7 @@ function ProductCard({ id, image, title, price }) {
                             <Rating
                                 count={5}
                                 size={15}
-                                value={4}
+                                value={4} // Set the value to the appropriate rating value
                                 activeColor="#ffd700"
                                 emptyColor="black"
                                 edit={true}

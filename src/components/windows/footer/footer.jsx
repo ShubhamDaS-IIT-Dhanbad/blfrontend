@@ -2,6 +2,7 @@ import React from "react";
 import "./footerCss.css";
 import { FaLocationArrow, FaMobileAlt, FaEnvelope } from "react-icons/fa";
 import Payment from "./payments.png";
+
 const Footer = () => {
     return (
         <>
@@ -10,12 +11,12 @@ const Footer = () => {
                 <div className="col">
                     <div className="title">About Bharat Linker</div>
                     <div className="text">
-                    Welcome to Bharat Linker, your one-stop platform 
-                    designed specifically for retailers and local shop 
-                    owners to seamlessly connect and centralize their 
-                    businesses. At Bharat Linker, our mission is to empower 
-                    local retailers by bringing their shops online, making 
-                    them accessible to the community and beyond.
+                        Welcome to Bharat Linker, your one-stop platform 
+                        designed specifically for retailers and local shop 
+                        owners to seamlessly connect and centralize their 
+                        businesses. At Bharat Linker, our mission is to empower 
+                        local retailers by bringing their shops online, making 
+                        them accessible to the community and beyond.
                     </div>
                 </div>
                 <div className="col">
@@ -23,7 +24,7 @@ const Footer = () => {
                     <div className="c-item">
                         <FaLocationArrow />
                         <div className="text">
-                            Berhampore,Murshidabad 
+                            Berhampore, Murshidabad 
                         </div>
                     </div>
                     <div className="c-item">
@@ -34,8 +35,9 @@ const Footer = () => {
                         <FaEnvelope />
                         <div className="text">Email: bharatlinker@gmail.com</div>
                     </div>
-                    <div className="text">For any problem you are facing free feel to contact us we here to help you out</div>
-
+                    <div className="text">
+                        For any problem you are facing, feel free to contact us. We are here to help you out.
+                    </div>
                 </div>
                 <div className="col">
                     <div className="title">Categories</div>

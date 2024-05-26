@@ -56,12 +56,8 @@ const Category = ({ data }) => {
             <div className="shop-by-category-name">
                 CATEGORIES
                 <span className="shop-by-category-name-bar"></span>
-                <span className="shop-by-category-name-ball"></span>
             </div>
             <div className="slider-container">
-                <div className="custom-arrow next-arrow" onClick={goToPrevSlide}>
-                    <IoIosArrowBack className="arrow" size={39} fontWeight={100} />
-                </div>
                 <div className="row gx-1 sliderParent">
                     <Slider {...settings} ref={sliderRef}>
                         {data.map(item => (
@@ -72,9 +68,6 @@ const Category = ({ data }) => {
                             </div>
                         ))}
                     </Slider>
-                </div>
-                <div className="custom-arrow prev-arrow" onClick={goToNextSlide}>
-                    <IoIosArrowForward className="arrow" size={39} />
                 </div>
             </div>
         </div>

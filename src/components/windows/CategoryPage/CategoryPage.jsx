@@ -18,7 +18,7 @@ function AllCategoryRootPages() {
     const fetchProducts = async () => {
       
       try {
-        const response = await fetch(`https://bshopbackend.vercel.app/api/v1/product/products?pincode=${pinCode}&categories=${categoriesString}`);
+        const response = await fetch(`https://bharat-lbackend.vercel.app/api/v1/product/products?pincode=${pinCode}&categories=${categoriesString}`);
         
         if (!response.ok) {
           throw new Error('Failed to fetch products');

@@ -5,7 +5,7 @@ export const fetchShopDetails = createAsyncThunk(
   'shop/fetchShopDetails',
   async (shopId, { rejectWithValue }) => {
     try {
-      const response = await fetch(`https://bshopbackend-2r2jqqe6d-shubhamdas-iit-dhanbads-projects.vercel.app/shop/shopdetail/${shopId}`);
+      const response = await fetch(`https://bharat-lbackend.vercel.app/api/v1/shop/shopdetail/${shopId}`);
       if (!response.ok) {
         throw new Error('Failed to fetch shop details');
       }
@@ -23,7 +23,7 @@ export const fetchShop = createAsyncThunk(
   'shop/fetchShop',
   async ({ pinCode, selectedCategories}, { rejectWithValue }) => {
     try {
-      const url = `https://bshopbackend.vercel.app/api/v1/shop/shops?pincode=${pinCode}`;
+      const url = `https://bharat-lbackend.vercel.app/api/v1/shop/shops?pincode=${pinCode}`;
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error('Failed to fetch shops');

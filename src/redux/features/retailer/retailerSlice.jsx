@@ -5,7 +5,7 @@ export const fetchShopData = createAsyncThunk(
   'retailer/fetchShopData',
   async (shopId, { rejectWithValue }) => {
     try {
-      const response = await fetch(`http://localhost:5173/api/v1/shop/shopdetail/${shopId}`);
+      const response = await fetch(`https://bharat-lbackend.vercel.app/api/v1/shop/shopdetail/${shopId}`);
       if (!response.ok) {
         throw new Error('Failed to fetch shop data');
       }

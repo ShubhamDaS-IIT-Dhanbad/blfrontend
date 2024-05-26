@@ -72,7 +72,7 @@ function UpdateProduct({ pinCodes }) {
         });
 
         try {
-            const response = await axios.post(`https://bshopbackend.vercel.app/api/v1/product/updateproduct/${id}`, formData, {
+            const response = await axios.post(`https://bharat-lbackend.vercel.app/api/v1/product/updateproduct/${id}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

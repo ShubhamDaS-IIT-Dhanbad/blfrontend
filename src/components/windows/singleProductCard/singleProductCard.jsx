@@ -24,9 +24,9 @@ const ProductDetails = () => {
         const fetchData = async () => {
             try {
                 const productAction = await dispatch(fetchProductDetails(productId));
-                const shopId = productAction.payload.shop;
-                setProductDetails(productAction.payload);
-                setSelectedImage(productAction.payload.images[0]);
+                const shopId = productAction?.payload?.shop;
+                setProductDetails(productAction?.payload);
+                setSelectedImage(productAction?.payload?.images[0]);
                 if (shopId) {
                     const shopAction = await dispatch(fetchShopDetails(shopId));
                     setShopDetails(shopAction.payload);
@@ -41,7 +41,7 @@ const ProductDetails = () => {
     }, [dispatch, productId]);
 
     const increaseQuantity = () => {
-        if (productDetail.quantityAvailable <= quantity) return;
+        if (productDetail?.quantityAvailable <= quantity) return;
         setQuantity(quantity + 1);
     };
 
@@ -81,9 +81,9 @@ const ProductDetails = () => {
                         <div className="ProductDetails">
                             <div className="pro-single-shop-container-3-1">
                                 <img src={selectedImage} alt="Selected Product" />
-                                {productDetail.images.length > 1 && (
+                                {productDetail?.images?.length > 1 && (
                                     <div className='pro-single-shop-container-3-1-2'>
-                                        {productDetail.images.map((img, index) => (
+                                        {productDetail?.images?.map((img, index) => (
                                             <img
                                                 key={index}
                                                 src={img}
@@ -121,7 +121,7 @@ const ProductDetails = () => {
                                             halfIcon={<i className="fa fa-star-half-alt"></i>}
                                             filledIcon={<i className="fas fa-star"></i>}
                                         />
-                                        ({productDetail.reviews?.length} Reviews)
+                                        ({productDetail?.reviews?.length} Reviews)
                                     </span>
                                 </div>
                                 <div className="detailsBlock-3">
@@ -132,14 +132,14 @@ const ProductDetails = () => {
                                             <input type="number" value={quantity} readOnly />
                                             <button onClick={increaseQuantity} style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>+</button>
                                         </div>
-                                        <button disabled={productDetail.quantityAvailable <= 0} style={{ width: "70%", height: "45px", fontSize: "12px", fontWeight: "900" }}>
+                                        <button disabled={productDetail?.quantityAvailable <= 0} style={{ width: "70%", height: "45px", fontSize: "12px", fontWeight: "900" }}>
                                             BOOK YOUR VISIT
                                         </button>
                                     </div>
                                     <p>
                                         Status:
-                                        <b className={productDetail.quantityAvailable > 0 ? "greenColor" : "redColor"}>
-                                            {productDetail.quantityAvailable > 0 ? "In Stock" : "Out of Stock"}
+                                        <b className={productDetail?.quantityAvailable > 0 ? "greenColor" : "redColor"}>
+                                            {productDetail?.quantityAvailable > 0 ? "In Stock" : "Out of Stock"}
                                         </b>
                                     </p>
                                 </div>

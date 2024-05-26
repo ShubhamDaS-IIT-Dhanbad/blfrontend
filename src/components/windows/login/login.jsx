@@ -18,11 +18,11 @@ function LoginPage() {
         e.preventDefault();
         setError('');
         setIsLoading(true);
-        try {
-            const response = await axios.post('https://bshopbackend.vercel.app/api/v1/account/login', { mobileNumber });
+        try {   console.log("response")
+            const response = await axios.post('https://bharat-lbackend.vercel.app/api/v1/account/login', { mobileNumber });
+            console.log("response")
             if (response.status === 200) {
                 localStorage.setItem('userData', JSON.stringify(response.data.data.user));
-                dispatch(setIsAuthenticated(true));
                 dispatch(setIsAuthenticated(true));
 
                 const pinCodesString = response.data.data.user && response.data.data.user.pinCodes 

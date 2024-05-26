@@ -1,0 +1,132 @@
+.product-card {
+    background-color: rgb(55, 53, 53);
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    border-radius: 4px;
+    z-index: 3;
+    overflow: hidden;
+    padding:16px;
+    &:hover{
+        scale: 1.04;
+        cursor: pointer;
+        box-shadow: rgba(255, 255, 255, 0.215) 0px 7px 29px 0px;
+    }
+}
+
+.product-card-top {
+    height: 70%;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    transition: all ease 1s;
+}
+
+.product-card-top-image {
+    width: 100%;height: 100%;
+    border-radius: 4px;
+}
+
+.product-card-bottom {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #ffffff;
+}
+
+.product-card-shop-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.shoe-name {
+    font-size: 10px;
+    font-weight: bolder;
+}
+
+.product-card-shop-name-div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.product-card-shop {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.product-card-shop-price {
+    padding-left: 2px;
+    display: flex;
+}
+
+.price {
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    color: #707070;
+}
+
+.product-card-shop-name-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-card-shop-name {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 12.5px;
+    font-weight: 100;
+    letter-spacing: 1;
+}
+
+.price_num {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.product-card-button-container {
+    position: relative;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    position: relative;
+    height: 33px;
+    width: 43%;
+    border-radius: 2px;
+    background-color: rgb(67, 61, 61);
+    box-shadow: rgb(144, 136, 136) 0px 25px 50px -12px;
+}
+
+.button button {
+    position: relative;  
+    height: 100%;
+    width: 100%;
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 11px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 100;
+    letter-spacing: 0.1px;
+    color: #ffffff;
+}
+
+.button button:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 1px solid white;
+    border-radius: 7px;
+    transition: all 0.3s ease;
+}

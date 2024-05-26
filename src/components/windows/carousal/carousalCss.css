@@ -1,0 +1,15 @@
+#carouselExampleIndicators{
+    z-index:0;}
+    .CarouselSlide {
+        display: flex;width: 100vw;height: 70vh;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory; /* For smooth scrolling */
+    }
+    
+    .CarouselImage {
+        flex: 0 0 auto; /* Prevent images from stretching */
+        width: 100%; /* Adjust width to fit five images in a row */
+        scroll-snap-align: start; /* For smooth scrolling */
+    }
+   
+    

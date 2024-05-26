@@ -1,0 +1,56 @@
+.shop-card {
+  background-color: rgba(230, 236, 234, 0.995);
+  color: rgb(0, 0, 0);padding:5px 5px 15px 5px;
+  width: 16vw;border: 1px solid black;
+  height: 289px;padding: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;gap: 8px;
+  border-radius: 7px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.shop-card:hover {
+  transform: scale(1.05);
+  box-shadow: rgba(108, 104, 104, 0.16) 0px 3px 6px, rgba(106, 102, 102, 0.23) 0px 3px 6px;
+}
+.shop-card-top {
+  height: 69%;
+  width: 100%;
+  transition: all 1s ease;
+  cursor: pointer;
+}
+
+.shop-card-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+}
+
+.shop-card-shop-name-div {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;font-weight: 700;
+  text-align: center;
+}
+.shop-card-shop-name-div span{
+  font-weight: 800;
+}
+.shop-card-map-icon{
+  display: flex;flex-direction: row;
+  justify-content: center;align-items: center;
+}
+
+.shop-card-map-icon{
+  &:hover{
+    scale: 1.1;color: rgb(34, 137, 227);
+    cursor: pointer;
+  }
+}
+.shop-card-active {
+  background-color: rgba(152, 215, 149, 0.5); /* Green background for active shops */
+}
+
+.shop-card-inactive {
+  background-color: rgba(252, 203, 203, 0.8); /* Red background for inactive shops */
+}

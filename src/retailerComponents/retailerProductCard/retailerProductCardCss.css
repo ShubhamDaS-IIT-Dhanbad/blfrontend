@@ -1,0 +1,140 @@
+.retailer-product-card {
+    background-color: rgb(65, 66, 67);
+    width: 200px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    border-radius: 4px;
+    z-index: 3;
+    overflow: hidden;
+    padding: 15px;
+    &:hover {
+        transform: scale(1.04);
+        cursor: pointer;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+}
+.retailer-product-card.deleting {
+    background-color: rgb(226, 78, 78); /* Change the background color to red */
+    color: white; /* Optional: change text color to improve readability */
+    opacity: 0.6; /* Optional: make the card semi-transparent */
+}
+
+
+.retailer-product-card-top {
+    height: 70%;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    transition: all ease 1s;
+}
+
+.retailer-product-card-top-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+.faeye{
+    &:hover{
+        scale: 1.1;
+        color: rgb(53, 161, 229);
+    }
+}
+.retailer-product-card-bottom {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #fff9f9;
+}
+
+.retailer-product-card-shop-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.retailer-product-card-shop-name-div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.retailer-product-card-shop {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.retailer-product-card-shop-price {
+    padding-left: 2px;
+    display: flex;
+}
+
+.retailer-price {
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    color: #707070;
+}
+
+.retailer-product-card-shop-name-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.retailer-product-card-shop-name {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 12.5px;
+    font-weight: 100;
+    letter-spacing: 1;
+}
+
+.retailer-price_num {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.retailer-product-card-button-container {
+    position: relative;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.retailer-button {
+    position: relative;
+    height: 33px;
+    width: 43%;
+    border-radius: 7px;
+    background-color: rgb(67, 61, 61);
+    box-shadow: rgb(144, 136, 136) 0px 25px 50px -12px;
+}
+
+.retailer-button button {
+    position: relative;  
+    height: 100%;
+    width: 100%;
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 11px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 100;
+    letter-spacing: 0.1px;
+    color: #ffffff;
+}
+
+.retailer-button button:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 1px solid white;
+    border-radius: 7px;
+    transition: all 0.3s ease;
+}

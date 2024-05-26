@@ -1,0 +1,8 @@
+.single-product{
+    background-color: rgb(255, 255, 255);
+    padding: 0;margin: 0;
+    display: flex;flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+}

@@ -1,0 +1,22 @@
+/* loadingCss.css */
+@keyframes pulse {
+    0% { transform: scale(0.9); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(0.9); }
+  }
+  
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .loader {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #6e8aab, #d175be); /* Change colors as desired */
+    animation: pulse 1.5s infinite;
+  }
+  

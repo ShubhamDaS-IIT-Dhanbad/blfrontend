@@ -1,0 +1,77 @@
+.all-shop-page-container {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 200px;
+}
+
+.all-shop-page-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0,0.206fr)); 
+  grid-gap: 20px;align-items: center;justify-content: center;
+}
+
+.all-shop-page-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.all-shop-page-empty-message, .all-shop-page-error-message {
+  font-size: 18px;
+  color: #555;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.all-shop-page-pagination-buttons {
+  display: flex;
+  justify-content: center;width: 100%;
+  margin-top: 20px;border-radius: 8px;
+}
+
+.all-shop-page-pagination-button {
+  width: 20%;
+  height: 45px;
+  margin: 0 5px;
+  padding: 10px 0;
+  font-size: 16px;
+  background-color: #327bdb;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 19px 38px rgba(145, 142, 142, 0.3), 0 15px 12px rgba(209, 197, 197, 0.12);
+  cursor: pointer;
+  transition: all 0.3s ease;font-weight: 700;
+  text-align: center;
+}
+
+.all-shop-page-pagination-button:hover {
+  background-color: #ffffff;
+  color: #000000;
+  transform: scale(1.05);
+}
+
+@media (max-width: 888px) {
+  .all-shop-page-grid {
+    grid-template-columns: repeat(3, minmax(0, 0.7fr));
+  }
+
+  .all-shop-page-pagination-button {
+    width: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .all-shop-page-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .all-shop-page-pagination-button {
+    width: 70%;
+  }
+}
+

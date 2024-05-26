@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: none;
+    padding: none;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+.signuplink_properties{
+    color: white;
+    margin: 0;display: flex;justify-content: center;
+}
+.signuplink_properties:hover{
+    text-decoration: none;
+    color: black;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* BODY+CONTAINER */
+#signup-parentcontainer {
+    height: 100vh;
+    width: 100vw;
+    background-color: #c9d6ff;
+    border: 2px solid #c9d6ff;
+    opacity: 0.4;
+}
+
+#signup-container {
+    width: 717px;
+    height: 400px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    max-width: 100%;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+#signupcontainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+/* form */
+#signupform {
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+#signupform form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: inherit;
+}
+
+#signupform form * {
+    margin-bottom: 1.3%;
+}
+
+#social_media_logo a {
+    font-size: 23px;
+    margin-left: 9px;
+    cursor: pointer;
+}
+
+#social_media_logo {
+    margin-bottom: 2%;
+}
+
+#signupform span{margin-bottom: 2%;}
+#signupform form input {
+    width: 76%;
+    height: 9%;
+    border: none;
+    background-color: #eee;
+    border-radius: 7px;
+    padding-left: 5px;margin-bottom: 3px;
+}
+#signupform button{margin-top: 7px;}
+
+
+#toggle-login-button {
+    height: 8%;
+    width: 33%;
+    border-radius: 15px;
+    border-style: none;
+    font-weight: bolder;
+}
+
+/* login */
+.login-class {
+    height: 100%;
+    width: 50%;
+    background-image: url("akt.png");
+    background-size: cover;
+    overflow: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.login-class {
+    border-radius: 30px 90px 90px 30px;
+}
+
+.login-class:hover {
+    scale: 1.05;
+}
+
+/* BUTTONS */
+#toggle-login-button {
+    margin-bottom: 31px;
+    height: 8%;
+    width: 33%;
+    border-radius: 15px;
+    border-style: none;
+    color: white;
+    background-color: black;
+    font-weight: bolder;
+    outline: none;
+}
+
+#toggle-login-button:hover {
+    transition: ease-in 27ms;
+    background-color: #fff;
+    color: black;
+    font-weight: bolder;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    scale: 1.1;
+}
+
+#toggle-login-button:active {
+    transition: ease-in 50ms;
+    scale: 1.01;
+}
+
+
+
+
+
+
+/* "signup page signup button" */
+
+
+#signup-button {
+    height: 8%;
+    width: 33%;
+    border-radius: 15px;
+    border-style: none;
+    font-weight: bolder;
+    outline: none;
+}
+
+#signup-button:active {
+    transition: ease-out 80ms;
+    background-color: #fff;
+    color: black;
+    font-weight: bolder;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    scale: 1.1;
+}

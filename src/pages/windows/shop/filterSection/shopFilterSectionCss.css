@@ -1,0 +1,15 @@
+/* FilterSection.css */
+.shop-filter-section {
+  display: flex;width: 200px;
+  flex-direction: column;
+  padding:5px 20px 5px 20px;
+  margin: 0;
+  border-radius: 4px;
+}
+.shop-filter-section p {
+  font-size: 29px;font-weight: 800;
+  color: rgb(0, 0, 0);
+}
+.shop-filter-section-categories{
+  display: flex;flex-direction: column;gap: 25px;
+}

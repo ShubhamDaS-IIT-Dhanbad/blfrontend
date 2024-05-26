@@ -1,0 +1,12 @@
+
+#home-div {
+    background: linear-gradient(45deg, #f9f3f3, #fcfcfc); /* Change colors as desired */
+    display: flex;
+    flex-direction: column;
+    gap:50px;
+    min-width: 100vw; /* Ensure the div expands to at least the full width of the viewport */
+}
+#home-div-container{
+    margin-top: 1.3px;
+    
+}

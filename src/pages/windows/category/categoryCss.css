@@ -1,0 +1,18 @@
+
+.category-main-content {
+    margin: 30px 0;
+   
+    .layout {
+        max-width: calc(100% - 20px);
+        margin: 0 auto;
+       
+    }
+    .category-title {
+        font-size: 24px;
+       
+    }
+    .products-container {
+        margin: 20px 0;
+       
+    }
+}

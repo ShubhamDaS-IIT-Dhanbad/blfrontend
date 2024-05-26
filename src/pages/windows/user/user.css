@@ -1,0 +1,118 @@
+#user-outer-div {
+    display: flex;
+    margin: 20px 30px 20px 30px;
+    gap: 12px;
+}
+
+#user-left-div {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* user profile */
+#user-profile-div {
+    background-color: white;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 10px 10px 10px;
+}
+
+#user-profile-pic-div {
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+    background-color: black;display: flex;background-size: contain;
+}
+#user-profile-pic-div:hover{cursor: pointer;}
+#user-profile-name-div {
+    display: flex;
+    flex-direction: column;
+}
+
+#user-profile-name-div-1 p {
+    padding: 0;
+    margin: 0;
+    font-size: small;
+}
+
+#user-profile-name-div-2 p {
+    padding: 0;
+    margin: 0;
+    font-weight: 700;
+}
+
+/* lass-user-left-child-divs-single-element like my-order and logout*/
+.class-user-left-child-divs-single-element {
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 20px 20px 20px;background-color: white;
+}
+
+.class-user-left-child-divs-single-element p {
+    padding: 0;margin: 0;
+    font-weight: 900;
+    color: rgb(0, 0, 0, 0.6);
+}
+
+
+/* css using class */
+.class-user-left-child-divs{
+    background-color: white;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 20px 20px;
+}
+.class-user-left-child-divs-c1 {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    gap: 20px;
+}
+.class-user-left-child-divs-c1 p {
+    padding: 0;
+    margin: 0;
+    font-weight: 900;
+    color: rgb(0, 0, 0, 0.6);
+}
+
+.class-user-left-child-divs-c2 {
+    display: flex;flex-direction: column;
+    padding-top: 10px;padding-bottom: 20px;
+}
+.class-user-left-child-divs-c2 p {
+    padding-left: 20%;height: 35px;display: flex;align-items: center;
+    margin: 0;
+    font-weight: 500;font-size: 15px;
+    color: rgb(0, 0, 0, 0.6);
+}
+
+#user-right-div{
+    background-color: white;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.08);
+    width: 800px;height: 900px;
+    border-radius: 10px;
+}
+
+
+/* my-order */
+.class-user-left-child-divs:hover{
+    cursor: pointer;
+}
+.class-user-left-child-divs-c2 p:hover{
+    background-color:whitesmoke;border-radius: 10px;
+}
+.class-user-left-child-divs-single-element:hover{
+    scale: 1.05;cursor: pointer;
+}

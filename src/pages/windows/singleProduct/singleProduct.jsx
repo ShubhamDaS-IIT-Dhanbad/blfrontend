@@ -4,7 +4,6 @@ import "./singleProductCss.css";
 import { Helmet } from 'react-helmet';
 
 import { useSelector } from 'react-redux';
-import { fetchProducts } from '..//../../redux/features/products/productSlics.jsx';
 import SingleProductCard from "../../../components/windows/singleProductCard/singleProductCard.jsx"
 
 const SingleProduct = () => {

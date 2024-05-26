@@ -8,7 +8,7 @@ export const fetchProducts = createAsyncThunk(
       const pincode = pinCode ? pinCode : [];
       const shopid = shopId ? shopId : "";
       const categories = Array.isArray(category) ? category : [category];
-      const response = await fetch(`http://localhost:12000/api/v1/product/products?pincode=${pincode}&categories=${categories}&shopId=${shopid}`);
+      const response = await fetch(`https://bshopbackend.vercel.app/api/v1/product/products?pincode=${pincode}&categories=${categories}&shopId=${shopid}`);
       if (!response.ok) {
         throw new Error('Failed to fetch products');
       }
@@ -25,7 +25,7 @@ export const fetchProductDetails = createAsyncThunk(
   'product/fetchProductDetails',
   async (productId) => {
     try {
-      const response = await fetch(`http://localhost:12000/api/v1/product/productsdetail/${productId}`);
+      const response = await fetch(`https://bshopbackend-2r2jqqe6d-shubhamdas-iit-dhanbads-projects.vercel.app/product/productsdetail/${productId}`);
       if (!response.ok) {
         throw new Error('Failed to fetch product details');
       }
@@ -42,7 +42,7 @@ export const searchedProducts = createAsyncThunk(
   'products/searchedProducts',
   async (keywords) => {
     try {
-      const response = await fetch(`http://localhost:12000/api/v1/product/products?keyword=${keywords}`);
+      const response = await fetch(`https://bshopbackend-2r2jqqe6d-shubhamdas-iit-dhanbads-projects.vercel.app/product/products?keyword=${keywords}`);
       if (!response.ok) {
         throw new Error('Failed to fetch products');
       }

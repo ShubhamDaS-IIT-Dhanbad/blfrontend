@@ -44,8 +44,8 @@ const ShopDetails = () => {
             try {
                 if (shopId) {
                     const shopAction = await dispatch(fetchShopDetails(shopId));
-                    const productResponse = await fetch(`http://localhost:12000/api/v1/product/products?shopid=${shopId}`);
-                    const retailerResponse = await fetch(`http://localhost:12000/api/v1/retailer/retailerdata/${shopAction.payload.owner}`);
+                    const productResponse = await fetch(`https://bshopbackend.vercel.app/api/v1/product/products?shopid=${shopId}`);
+                    const retailerResponse = await fetch(`https://bshopbackend.vercel.app/api/v1/retailer/retailerdata/${shopAction.payload.owner}`);
 
                     if (!productResponse.ok || !retailerResponse.ok) {
                         throw new Error("Failed to fetch data");

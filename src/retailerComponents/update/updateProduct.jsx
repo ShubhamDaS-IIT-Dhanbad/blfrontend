@@ -23,7 +23,7 @@ function UpdateProduct({ pinCodes }) {
     useEffect(() => {
         const fetchProductDetails = async () => {
             try {
-                const response = await axios.get(`http://localhost:12000/api/v1/product/${id}`);
+                const response = await axios.get(`https://bshopbackend-2r2jqqe6d-shubhamdas-iit-dhanbads-projects.vercel.app/product/${id}`);
                 const product = response.data;
 
                 setTitle(product.title);
@@ -72,7 +72,7 @@ function UpdateProduct({ pinCodes }) {
         });
 
         try {
-            const response = await axios.post(`http://localhost:12000/api/v1/product/updateproduct/${id}`, formData, {
+            const response = await axios.post(`https://bshopbackend.vercel.app/api/v1/product/updateproduct/${id}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

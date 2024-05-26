@@ -1,3 +1,4 @@
+import dotenv from 'dotenv';
 import React, { useEffect, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { setIsAuthenticated } from './redux/features/logInLogout/authenticationSlice.jsx';
@@ -21,7 +22,6 @@ const initializeApp = async (dispatch) => {
     console.error('Error initializing app:', error);
   }
 };
-
 
 const App = React.memo(() => {
   const dispatch = useDispatch();

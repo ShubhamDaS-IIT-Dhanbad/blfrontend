@@ -22,7 +22,7 @@ function Retailer() {
 
   const handleDeleteProduct = async (id) => {
     try {
-      const response = await axios.post(`http://localhost:12000/api/v1/product/deleteproduct/${id}`);
+      const response = await axios.post(`https://bshopbackend-2r2jqqe6d-shubhamdas-iit-dhanbads-projects.vercel.app/product/deleteproduct/${id}`);
       alert("Product deleted successfully");
       dispatch(fetchRetailerDataFromLocalStorage({ dispatch }));
     } catch (error) {

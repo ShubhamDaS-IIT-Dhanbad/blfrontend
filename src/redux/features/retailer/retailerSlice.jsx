@@ -5,7 +5,7 @@ export const fetchShopData = createAsyncThunk(
   'retailer/fetchShopData',
   async (shopId, { rejectWithValue }) => {
     try {
-      const response = await fetch(`http://localhost:12000/api/v1/shop/shopdetail/${shopId}`);
+      const response = await fetch(`http://localhost:5173/api/v1/shop/shopdetail/${shopId}`);
       if (!response.ok) {
         throw new Error('Failed to fetch shop data');
       }
@@ -22,7 +22,7 @@ export const fetchProductsByShopId = createAsyncThunk(
   'retailer/fetchProductsByShopId',
   async (shopId, { rejectWithValue }) => {
     try {
-      const response = await fetch(`http://localhost:12000/api/v1/product/retailer/products/${shopId}`);
+      const response = await fetch(`https://bshopbackend.vercel.app/api/v1/product/retailer/products/${shopId}`);
       if (!response.ok) {
         throw new Error('Failed to fetch products');
       }

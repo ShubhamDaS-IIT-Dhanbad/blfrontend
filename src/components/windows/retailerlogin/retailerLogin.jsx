@@ -16,7 +16,7 @@ function LoginPage() {
         setIsLoading(true);
 
         try {
-            const response = await axios.post('http://localhost:12000/api/v1/retailer/login', { phoneNumber });
+            const response = await axios.post('https://bshopbackend.vercel.app/api/v1/retailer/login', { phoneNumber });
             if (response.status === 200) {
                 console.log(response)
                 localStorage.setItem('retailerData', JSON.stringify(response));

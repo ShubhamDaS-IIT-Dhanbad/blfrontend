@@ -17,7 +17,7 @@ const withProductAuthorization = memo(({ element }) => {
     }
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`http://localhost:12000/api/v1/product/productsdetail/${id}`);
+        const response = await axios.get(`https://bshopbackend.vercel.app/api/v1/product/productsdetail/${id}`);
         const productData = response.data;
         if (productData.product.shop !== retailerShopId) {
           navigate('/products');

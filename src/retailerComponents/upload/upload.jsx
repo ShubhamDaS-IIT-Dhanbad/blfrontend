@@ -78,7 +78,7 @@ function UploadProduct({ id, pinCodes }) {
         });
 
         try {
-            const response = await axios.post(`http://localhost:12000/api/v1/product/addproduct`, data, {
+            const response = await axios.post(`https://bshopbackend.vercel.app/api/v1/product/addproduct`, data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

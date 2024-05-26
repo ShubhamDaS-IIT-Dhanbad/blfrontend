@@ -19,7 +19,7 @@ function LoginPage() {
         setError('');
         setIsLoading(true);
         try {
-            const response = await axios.post('http://localhost:12000/api/v1/account/login', { mobileNumber });
+            const response = await axios.post('https://bshopbackend.vercel.app/api/v1/account/login', { mobileNumber });
             if (response.status === 200) {
                 localStorage.setItem('userData', JSON.stringify(response.data.data.user));
                 dispatch(setIsAuthenticated(true));

@@ -345,9 +345,6 @@
   width: 30vw;display: flex;height: 89vh;
   flex-direction: column;
 }
-.pro-single-shop-container-3-1 img{
-  height: 80%;
-}
 .pro-single-shop-container-3-1-2{
  display: flex;background-size: cover;
   height: 20%;overflow-x: scroll;min-width: 100%;

@@ -1,15 +1,37 @@
-#carouselExampleIndicators{
-    z-index:0;}
+#carouselExampleIndicators {
+    z-index: 0;
+}
+
+.CarouselSlide {
+    display: flex;
+    width: 100vw;
+    height: 70vh;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* For smooth scrolling */
+}
+
+.CarouselImage {
+    flex: 0 0 auto; /* Prevent images from stretching */
+    width: 100%; /* Adjust width to fit five images in a row */
+    height: 100%;
+    object-fit: cover;
+    scroll-snap-align: start; /* For smooth scrolling */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
     .CarouselSlide {
-        display: flex;width: 100vw;height: 70vh;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory; /* For smooth scrolling */
+        height: 30vh; /* Adjust height for mobile */
     }
-    
+
     .CarouselImage {
-        flex: 0 0 auto; /* Prevent images from stretching */
-        width: 100%; /* Adjust width to fit five images in a row */
-        scroll-snap-align: start; /* For smooth scrolling */
+        width: 100vw; /* Full width for mobile */
     }
-   
-    
+}
+
+/* Media query for larger devices */
+@media (min-width: 601px) {
+    .CarouselImage {
+        width: 100vw; /* Adjust width to fit more images in a row on larger screens */
+    }
+}

@@ -33,7 +33,7 @@ const HomePageCategoryProducts = ({ categories, products, loading }) => {
         swipeToSlide: true,
         responsive: [
             {
-                breakpoint: 800,
+                breakpoint: 1100,
                 settings: {
                     slidesToShow: 4,
                     slidesToScroll: 2,
@@ -42,7 +42,7 @@ const HomePageCategoryProducts = ({ categories, products, loading }) => {
                 }
             },
             {
-                breakpoint: 400,
+                breakpoint: 700,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 2,
@@ -50,9 +50,9 @@ const HomePageCategoryProducts = ({ categories, products, loading }) => {
                 }
             },
             {
-                breakpoint: 480,
+                breakpoint: 500,
                 settings: {
-                    slidesToShow: 4,
+                    slidesToShow: 2,
                     slidesToScroll: 1
                 }
             }

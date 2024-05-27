@@ -2,7 +2,7 @@
 /* Media query for mobile devices */
 @media (max-width: 1100px) {
     .CarouselSlide {
-        height: 30vh; /* Adjust height for mobile */
+        height: 10vh; /* Adjust height for mobile */
     }
 
     .CarouselImage {

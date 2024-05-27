@@ -1,6 +1,5 @@
 .all-shop-page-container {
   display: flex;
-  min-height: 2000px;
   flex-direction: row;
   padding: 20px;
   margin-top: 40px;
@@ -59,6 +58,7 @@
 }
 
 @media (max-width: 1150px) {
+  .all-shop-page-container {min-height: 2000px;}
   .all-shop-page-grid {
     display: grid;
     grid-template-columns: repeat(4,12rem); 

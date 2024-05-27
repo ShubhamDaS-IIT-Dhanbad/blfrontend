@@ -4,13 +4,15 @@ import ShopFilterSection from './filterSection/shopFilterSection.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchShop } from '../../../redux/features/shop/shopSlice.jsx';
 import ShopCard from '../../../components/windows/shopCard/shopCard.jsx';
-import Loading from '../../../components/windows/loading/loading.jsx'
+import Loading from '../../../components/windows/loading/loading.jsx';
+
 function AllShopPage() {
   const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
   const [categories, setCategories] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [filteredShops, setFilteredShops] = useState([]);
+  const [dataLoaded, setDataLoaded] = useState(false); // State to track if data has been loaded
   const shopsPerPage = 10;
 
   const shops = useSelector(state => state.shop.shops);
@@ -26,10 +28,20 @@ function AllShopPage() {
       behavior: 'instant',
     });
 
-    const userDataString = localStorage.getItem('userData');
-    const userData = userDataString ? JSON.parse(userDataString) : null;
-    const pinCode = userData ? userData.pinCodes.join(', ') : "";
-    dispatch(fetchShop({ pinCode }));
+    const fetchData = async () => {
+      try {
+        const userDataString = localStorage.getItem('userData');
+        const userData = userDataString ? JSON.parse(userDataString) : null;
+        const pinCode = userData ? userData.pinCodes.join(', ') : "";
+        await dispatch(fetchShop({ pinCode }));
+        setDataLoaded(true); // Set dataLoaded to true after fetching completes
+      } catch (error) {
+        console.error('Error fetching shops:', error);
+        // Handle error if necessary
+      }
+    };
+
+    fetchData();
   }, [dispatch]);
 
   useEffect(() => {
@@ -72,8 +84,12 @@ function AllShopPage() {
     setCurrentPage(prevPage => prevPage - 1);
   };
 
+  if (!dataLoaded) {
+    return <Loading />; // Show loading indicator until data is loaded
+  }
+
   return (
-    <div className="all-shop-page-container">{console.log("sho",currentShops)}
+    <div className="all-shop-page-container">
       <ShopFilterSection
         categories={categories}
         selectedCategories={selectedCategories}
@@ -105,4 +121,5 @@ function AllShopPage() {
 }
 
 export default AllShopPage;
+
 

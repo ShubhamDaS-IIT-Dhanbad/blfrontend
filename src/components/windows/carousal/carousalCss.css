@@ -1,6 +1,6 @@
 
 /* Media query for mobile devices */
-@media (max-width: 800px) {
+@media (max-width: 1100px) {
     .CarouselSlide {
         height: 30vh; /* Adjust height for mobile */
     }
@@ -10,9 +10,3 @@
     }
 }
 
-/* Media query for larger devices */
-@media (min-width: 801px) {
-    .CarouselImage {
-        width: 100%; /* Adjust width to fit more images in a row on larger screens */
-    }
-}

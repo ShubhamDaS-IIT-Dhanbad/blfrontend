@@ -13,6 +13,6 @@
 /* Media query for larger devices */
 @media (min-width: 801px) {
     .CarouselImage {
-        width: 100vw; /* Adjust width to fit more images in a row on larger screens */
+        width: 100%; /* Adjust width to fit more images in a row on larger screens */
     }
 }

@@ -21,18 +21,18 @@ const FeaturedProduct = ({ products, loading }) => {
         swipeToSlide: true,
         responsive: [
             {
-                breakpoint: 1024,
+                breakpoint: 800,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 4,
                     slidesToScroll: 2,
                     infinite: true,
                     dots: true
                 }
             },
             {
-                breakpoint: 600,
+                breakpoint: 400,
                 settings: {
-                    slidesToShow: 4,
+                    slidesToShow: 3,
                     slidesToScroll: 2,
                     initialSlide: 2
                 }
@@ -40,7 +40,7 @@ const FeaturedProduct = ({ products, loading }) => {
             {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 4,
                     slidesToScroll: 1
                 }
             }

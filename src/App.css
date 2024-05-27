@@ -8,12 +8,6 @@
 body::-webkit-scrollbar {
   display: none;
 }
-
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
 /* Set height and width for root elements and apply font */
 html, body, #root, .app, .content {
   height: 100%;
@@ -29,7 +23,7 @@ html, body, #root, .app, .content {
 
 /* Scrollbar styles for Webkit browsers */
 ::-webkit-scrollbar {
-  width: 12px; /* Adjust scrollbar width if needed */
+  width: 0px; /* Adjust scrollbar width if needed */
 }
 
 /* Scrollbar track */
@@ -40,7 +34,7 @@ html, body, #root, .app, .content {
 /* Scrollbar thumb */
 ::-webkit-scrollbar-thumb {
   background: #888;
-  border-radius: 10px; /* Rounded corners for better aesthetics */
+  border-radius: 0px; /* Rounded corners for better aesthetics */
 }
 
 /* Scrollbar thumb on hover */

@@ -1,11 +1,12 @@
 .all-shop-page-container {
-  display: flex;min-height: 100vh;
+  display: flex;min-height: 1700px;
   flex-direction: row;
   gap: 0px;
   justify-content: center;
   padding: 20px;
   margin-top: 40px;
   margin-bottom: 200px;
+ 
 }
 
 .all-shop-page-grid {
@@ -57,7 +58,7 @@
 
 @media (max-width: 888px) {
   .all-shop-page-grid {
-    grid-template-columns: repeat(3, minmax(0, 0.7fr));
+    grid-template-columns: repeat(4, minmax(0, 0.7fr));
   }
 
   .all-shop-page-pagination-button {

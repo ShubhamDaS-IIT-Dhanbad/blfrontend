@@ -1,13 +1,13 @@
 .home-page-category-products-container-parent{
-    display: flex;flex-direction: column;width: 100vw;
+    display: flex;flex-direction: column;width: 100%;
     justify-content: center;align-items: center;
-    margin: 80px 0px 20vh 0px ;gap: 60px;  
+    margin: 80px 0px 20px 0px ;gap: 60px;  
    
 }
 .home-page-category-products-container {
     display: flex;justify-content: center;align-items: center;gap: 20px;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
 }
 
 .home-page-category-products {

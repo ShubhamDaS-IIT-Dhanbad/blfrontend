@@ -21,9 +21,45 @@ function Carousal() {
     { id: 6, url: moto3 },
     { id: 7, url: samsung }
 ];
+
+const settings = {
+  infinite: true,
+  speed: 800,
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  initialSlide: 1,
+  swipeToSlide: true,
+  responsive: [
+      {
+          breakpoint: 1024,
+          settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              infinite: true,
+              dots: true
+          }
+      },
+      {
+          breakpoint: 600,
+          settings: {
+              slidesToShow: 4,
+              slidesToScroll: 2,
+              initialSlide: 2
+          }
+      },
+      {
+          breakpoint: 480,
+          settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+          }
+      }
+  ]
+};
+
   return (
     <>
-      <Carousel animation="slide"
+      <Carousel animation="slide" {...settings} 
       autoPlay={true}
       showIndicators={false}
       timeout={5000}

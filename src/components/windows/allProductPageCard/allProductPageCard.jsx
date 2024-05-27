@@ -14,7 +14,7 @@ function AllRetailerProductPageCard({ products, loading, error }) {
     selectedBrands: [],
     selectedCategories: []
   });
-  const productsPerPage = 20;
+  const productsPerPage = 50;
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });

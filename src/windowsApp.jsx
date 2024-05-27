@@ -9,7 +9,7 @@ import Hidefooter from './components/windows/footer/hideFooter.jsx';
 import Loading from './components/windows/loading/loading.jsx';
 import AuthRouteWrapper from './utils/AuthRouteWrapper.jsx';
 import RetailerAuthWrapper from './utils/retailerAuthWrapper.jsx';
-
+import './windowsCss.css'
 // Lazy load components
 const Home = lazy(() => import('./pages/windows/home/home.jsx'));
 const SingleProduct = lazy(() => import('./pages/windows/singleProduct/singleProduct.jsx'));
@@ -18,7 +18,7 @@ const Account = lazy(() => import('./pages/windows/user/user.jsx'));
 const Login = lazy(() => import('./components/windows/login/login.jsx'));
 const Signup = lazy(() => import('./components/windows/signup/signuppage.jsx'));
 const PageNotFound = lazy(() => import('./components/windows/pageNotFound/pageNotFound.jsx'));
-const CategoryPage = lazy(() => import('./components/windows/CategoryPage/CategoryPage.jsx'));
+const CategoryPage = lazy(() => import('./pages/windows/CategoryPage/CategoryPage.jsx'));
 const SearchPage = lazy(() => import('./components/windows/searchPage/searchPage.jsx'));
 const ContactPage = lazy(() => import('./components/windows/contactPage/contactPage.jsx'));
 const ShopPage = lazy(() => import('./pages/windows/shop/shopPage.jsx'));

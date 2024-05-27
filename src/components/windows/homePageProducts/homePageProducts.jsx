@@ -18,8 +18,11 @@ const HomePageCategoryProducts = ({ categories, products, loading }) => {
 
     useEffect(() => {
         // Determine if "View More" button should be visible
-        setShowMore(categories.length > visibleCategories);
-    }, [categories, visibleCategories]);
+        setShowMore(categories.length > visibleCategories && categories.slice(visibleCategories).some(item => {
+            const categoryProducts = products.filter(product => Array.isArray(product.category) && product.category.includes(item.category));
+            return categoryProducts.length >= 4;
+        }));
+    }, [categories, visibleCategories, products]);
 
     const settings = {
         infinite: true,
@@ -41,7 +44,7 @@ const HomePageCategoryProducts = ({ categories, products, loading }) => {
             {
                 breakpoint: 900,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 4,
                     slidesToScroll: 2,
                     initialSlide: 2
                 }
@@ -73,7 +76,17 @@ const HomePageCategoryProducts = ({ categories, products, loading }) => {
     };
 
     const handleViewMore = () => {
-        setVisibleCategories(visibleCategories + 5); // Show additional 5 categories on "View More" click
+        const remainingCategories = categories.slice(visibleCategories);
+        const nextVisibleCategories = remainingCategories.findIndex(item => {
+            const categoryProducts = products.filter(product => Array.isArray(product.category) && product.category.includes(item.category));
+            return categoryProducts.length >= 4;
+        });
+
+        if (nextVisibleCategories !== -1) {
+            setVisibleCategories(visibleCategories + nextVisibleCategories + 1);
+        } else {
+            setVisibleCategories(categories.length);
+        }
     };
 
     if (!loading) {

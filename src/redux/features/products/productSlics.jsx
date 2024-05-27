@@ -9,7 +9,6 @@ export const fetchProducts = createAsyncThunk(
       const shopid = shopId ? shopId : "";
       const categories = Array.isArray(category) ? category : [category];
       const response = await fetch(`https://bharat-lbackend.vercel.app/api/v1/product/products?pincode=${pincode}&categories=${categories}&shopId=${shopid}`);
-      console.log("ko",response)
       if (!response.ok) {
         throw new Error('Failed to fetch products');
       }

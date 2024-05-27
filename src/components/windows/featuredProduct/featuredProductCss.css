@@ -1,7 +1,7 @@
 .home-page-featured-products-container-parent {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     justify-content: center;
     align-items: center;
     gap: 18px;
@@ -13,7 +13,7 @@
 .home-page-featured-products-container {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
 }
 
 .home-page-featured-products {

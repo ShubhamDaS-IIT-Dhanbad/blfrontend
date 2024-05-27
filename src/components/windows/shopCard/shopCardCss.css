@@ -1,7 +1,7 @@
 .shop-card {
   background-color: rgba(230, 236, 234, 0.995);
   color: rgb(0, 0, 0);padding:5px 5px 15px 5px;
-  width: 16vw;border: 1px solid black;
+  width: 200px;border: 1px solid black;
   height: 289px;padding: 14px;
   display: flex;
   flex-direction: column;

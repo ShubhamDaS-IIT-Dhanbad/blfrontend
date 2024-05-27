@@ -16,14 +16,14 @@ const CategoryFilter = ({ categories, selectedCategories, onChange }) => {
     <div className="category-filter">
       <h4 className="category-filter-label">CATEGORIES</h4>
       <div className="category-checkbox-options">
-        {categories.map(category => (
+        {categories?.map(category => (
           <label key={category} className="category-checkbox-options-label">
             <input
               type="checkbox"
-              checked={selectedCategories.includes(category)}
+              checked={selectedCategories?.includes(category)}
               onChange={() => handleCheckboxChange(category)}
             />
-            {category.toUpperCase()}
+            {category}
           </label>
         ))}
       </div>

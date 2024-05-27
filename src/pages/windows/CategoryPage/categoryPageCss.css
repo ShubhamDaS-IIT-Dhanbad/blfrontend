@@ -1,0 +1,73 @@
+/* Styles for the category page */
+.category-page {
+    padding: 50px 20px 30px 20px;
+    display: flex;
+    gap: 0px;
+    justify-content: space-around;
+    min-height: 90vh;
+  }
+  
+  .category-page-container {
+    display: flex;
+    margin-left: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .category-page-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 12rem); /* Five columns */
+    grid-gap: 20px;
+  }
+  
+  .category-page-pagination-buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 8px;
+  }
+  
+  .category-page-pagination-button {
+    width: 20%;
+    height: 45px;
+    margin: 0 5px;
+    padding: 10px 0;
+    font-size: 16px;
+    background-color: #327bdb;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 19px 38px rgba(145, 142, 142, 0.3), 0 15px 12px rgba(209, 197, 197, 0.12);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  .category-page-pagination-button:hover {
+    background-color: #000;
+    color: #eeeded;
+  }
+  
+  .category-page-pagination-button:hover {
+    color: gold;
+  }
+  
+  .category-page-empty-message, .category-page-error-message {
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  @media (max-width: 600px) {
+    .category-page{
+        min-height: 1900px;
+    }
+    .category-page-grid {
+      grid-template-columns: repeat(4, 12rem); 
+      grid-gap: 20px;
+    }
+  }
+  

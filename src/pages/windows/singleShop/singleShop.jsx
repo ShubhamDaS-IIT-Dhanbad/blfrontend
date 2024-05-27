@@ -17,9 +17,9 @@ const SingleProduct = () => {
 
     return (
 
-        <div className="single-product">
+        <div className="single-shop">
             <Helmet>
-                <title>Product Page</title>
+                <title>Shop Page</title>
                 <meta name="description" content="Description of your product page" />
             </Helmet>
             <SingleShopCard />

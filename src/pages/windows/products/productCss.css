@@ -3,11 +3,11 @@
 .Product {
   padding: 50px 20px 30px 20px;
   display: flex;gap: 0px;justify-content: space-around;
-  margin-bottom: 50vh;
+  min-height: 1200px;
 }
 
 .all-product-page-container {
-  display: flex;
+  display: flex;margin-left: 20px;
   flex-direction: column;
   align-items: center;
 }
@@ -53,6 +53,18 @@
   color: #555;
   text-align: center;
   margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  .all-product-page-grid {
+    display: grid;
+    grid-template-columns: repeat(4,12rem); 
+    grid-gap: 20px;
+  }
+  .Product {
+    min-height: 1800px;
+  }
+  
 }
 
 

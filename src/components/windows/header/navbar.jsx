@@ -41,7 +41,7 @@ function Navbar() {
             if (searchQuery == '') {
                 navigate(`/products`);
             }else{
-                dispatch(searchedProducts(searchQuery));
+                // dispatch(searchedProducts(searchQuery));
                 navigate(`/search/${searchQuery}`);
                 console.log("Search initiated by Enter key for:", searchQuery);
             }

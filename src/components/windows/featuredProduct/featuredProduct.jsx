@@ -32,7 +32,7 @@ const FeaturedProduct = ({ products, loading }) => {
             {
                 breakpoint: 600,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 4,
                     slidesToScroll: 2,
                     initialSlide: 2
                 }

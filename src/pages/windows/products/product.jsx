@@ -12,7 +12,7 @@ const Product = ({category}) => {
   const { products, loading, error } = useSelector(state => state.products);
   const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 10; // 5 rows * 5 columns
+  const productsPerPage =50;// 5 rows * 5 columns
   const [selectedBrands, setSelectedBrands] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [uniqueBrands, setUniqueBrands] = useState([]);

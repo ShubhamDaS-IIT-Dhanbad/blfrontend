@@ -21,7 +21,10 @@ const Product = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const pinCode = ["742137"]
+        const userDataString = localStorage.getItem('userData');
+        const userData = userDataString ? JSON.parse(userDataString) : null;
+        const pinCodesString = userData ? userData.pinCodes.join(', ') : "";
+        const pinCode = pinCodesString ? pinCodesString : "";
         await dispatch(fetchProducts({ pinCode })); // Await the dispatch
         setDataLoaded(true); // Set dataLoaded to true after fetching completes
       } catch (error) {

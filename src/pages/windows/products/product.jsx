@@ -7,36 +7,38 @@ import Loading from '../../../components/windows/loading/loading.jsx';
 import ProductCard from "../../../components/windows/productCard/productCard.jsx";
 import FilterSection from '../../../components/windows/filterSection/filterSection.jsx';
 
-const Product = ({category}) => {
-  category=category? category:'' ;
-  const { products, loading, error } = useSelector(state => state.products);
+const Product = () => {
   const dispatch = useDispatch();
+  const { products, loading, error } = useSelector(state => state.products);
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage =50;// 5 rows * 5 columns
+  const productsPerPage = 32;
   const [selectedBrands, setSelectedBrands] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [uniqueBrands, setUniqueBrands] = useState([]);
   const [uniqueCategories, setUniqueCategories] = useState([]);
+  const [dataLoaded, setDataLoaded] = useState(false); // State to track if data has been loaded
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
-    const userDataString = localStorage.getItem('userData');
-    const userData = userDataString ? JSON.parse(userDataString) : null;
-
-    if (!userData || !userData.pinCodes) return;
-    const pinCodesString = userData.pinCodes.join(', ');
-    const pinCode = pinCodesString ? pinCodesString : '';
-    dispatch(fetchProducts({ pinCode,}));
-  }, []);
+    const fetchData = async () => {
+      try {
+        const pinCode = ["742137"]
+        await dispatch(fetchProducts({ pinCode })); // Await the dispatch
+        setDataLoaded(true); // Set dataLoaded to true after fetching completes
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+    fetchData();
+  }, [dispatch]);
 
   useEffect(() => {
     if (products && products.length > 0) {
       const brandsSet = new Set();
       const categoriesSet = new Set();
 
-      products?.forEach(product => {
-        brandsSet?.add(product.brand);
-        product?.category?.forEach(category => categoriesSet.add(category));
+      products.forEach(product => {
+        brandsSet.add(product.brand);
+        product.category.forEach(category => categoriesSet.add(category));
       });
 
       setUniqueBrands([...brandsSet]);
@@ -60,6 +62,10 @@ const Product = ({category}) => {
     setSelectedCategories(selectedCategories);
   };
 
+  if (!dataLoaded) {
+    return <Loading />; // Show loading indicator until data is loaded
+  }
+
   if (loading) {
     return <Loading />;
   }
@@ -69,7 +75,7 @@ const Product = ({category}) => {
   }
 
   if (!products || products.length === 0) {
-    return <div className="empty-message" style={{minHeight:"100vh"}}>No products available</div>;
+    return <div className="empty-message" style={{ minHeight: "100vh" }}>No products available</div>;
   }
 
   const filteredProducts = products.filter(product => {
@@ -106,17 +112,19 @@ const Product = ({category}) => {
       <div className="all-product-page-container">
         <div className="all-product-page-grid">
           {currentProducts.map(product => (
-            <div key={product._id}>
-              <ProductCard
-                id={product._id}
-                image={product.images[0]}
-                title={product.title}
-                price={product.price}
-              />
+            <div key={product?._id}>
+              {product?.images && product?.title && product?.price && ( // Check if all required fields are present
+                <ProductCard
+                  id={product?._id}
+                  image={product?.images[0]}
+                  title={product?.title.length > 45 ? `${product.title.substr(0, 45)}..` : product.title}
+                  price={product?.price}
+                />
+              )}
             </div>
           ))}
         </div>
-        <div/>
+        <div />
         <div className="all-product-page-pagination-buttons">
           {currentPage > 1 && (
             <button className="all-product-page-pagination-button" onClick={handlePrevPage}>
@@ -133,5 +141,5 @@ const Product = ({category}) => {
     </div>
   );
 }
-
 export default Product;
+

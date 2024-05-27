@@ -4,7 +4,7 @@ import ShopFilterSection from './filterSection/shopFilterSection.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchShop } from '../../../redux/features/shop/shopSlice.jsx';
 import ShopCard from '../../../components/windows/shopCard/shopCard.jsx';
-
+import Loading from '../../../components/windows/loading/loading.jsx'
 function AllShopPage() {
   const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
@@ -73,7 +73,7 @@ function AllShopPage() {
   };
 
   return (
-    <div className="all-shop-page-container">
+    <div className="all-shop-page-container">{console.log("sho",currentShops)}
       <ShopFilterSection
         categories={categories}
         selectedCategories={selectedCategories}

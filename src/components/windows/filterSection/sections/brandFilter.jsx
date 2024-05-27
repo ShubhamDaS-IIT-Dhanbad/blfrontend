@@ -20,7 +20,7 @@ const BrandFilter = ({ brands, selectedBrands, onChange }) => {
               checked={selectedBrands.includes(brand)}
               onChange={() => handleCheckboxChange(brand)}
             />
-            {brand.toUpperCase()}
+            {brand?.toUpperCase()}
           </label>
         ))}
       </div>

@@ -55,14 +55,14 @@
   margin-top: 20px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .all-product-page-grid {
     display: grid;
     grid-template-columns: repeat(4,12rem); 
     grid-gap: 20px;
   }
   .Product {
-    min-height: 1800px;
+    min-height: 2000px;
   }
   
 }

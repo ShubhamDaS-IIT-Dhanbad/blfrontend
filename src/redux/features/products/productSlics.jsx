@@ -22,7 +22,7 @@ export const fetchProducts = createAsyncThunk(
 
 // Async thunk to fetch product detail by id
 export const fetchProductDetails = createAsyncThunk(
-  'product/fetchProductDetails',
+  'products/fetchProductDetails',
   async (productId) => {
     try {
       const response = await fetch(`https://bharat-lbackend.vercel.app/api/v1/product/productsdetail/${productId}`);
@@ -38,15 +38,15 @@ export const fetchProductDetails = createAsyncThunk(
 );
 
 // Async thunk to search products
-export const searchedProducts = createAsyncThunk(
-  'products/searchedProducts',
-  async (keywords) => {
-    try {
+export const fetchSearchedProducts = createAsyncThunk(
+  'products/fetchSearchedProducts',
+  async ({ keywords }) => {
+    try {console.log("shubham",keywords)
       const response = await fetch(`https://bharat-lbackend.vercel.app/api/v1/product/products?keyword=${keywords}`);
       if (!response.ok) {
         throw new Error('Failed to fetch products');
       }
-      const products = await response.json();
+      const products = await response.json();console.log("aa",keywords,products)
       return products.products;
     } catch (error) {
       throw error;
@@ -75,6 +75,18 @@ const productSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      .addCase(fetchSearchedProducts.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchSearchedProducts.fulfilled, (state, action) => {
+        state.loading = false;
+        state.searchedProducts = action.payload;
+      })
+      .addCase(fetchSearchedProducts.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      })
       .addMatcher(
         action => action.type.startsWith('products/fetch') || action.type === 'products/searchedProducts',
         (state) => {

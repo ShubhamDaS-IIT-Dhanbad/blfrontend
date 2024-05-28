@@ -5,7 +5,7 @@ import { FaShoppingCart, FaCloudversify, FaSearch } from "react-icons/fa";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { useDispatch, useSelector } from 'react-redux';
 import { setIsAuthenticated } from '../../../redux/features/logInLogout/authenticationSlice.jsx';
-import { searchedProducts } from '../../../redux/features/products/productSlics.jsx';
+import { fetchSearchedProducts} from '../../../redux/features/products/productSlics.jsx';
 import { setUser } from '../../../redux/features/userData/userDataSlice.jsx';
 
 function Navbar() {
@@ -41,7 +41,8 @@ function Navbar() {
             if (searchQuery == '') {
                 navigate(`/products`);
             }else{
-                // dispatch(searchedProducts(searchQuery));
+                const keywords=searchQuery;
+                dispatch(fetchSearchedProducts({keywords}));
                 navigate(`/search/${searchQuery}`);
                 console.log("Search initiated by Enter key for:", searchQuery);
             }
@@ -50,7 +51,7 @@ function Navbar() {
     };
 
     const submitButton = () => {
-        dispatch(searchedProducts(searchQuery));
+        dispatch(fetchSearchedProducts(searchQuery));
         navigate(`/search/${searchQuery}`);
         console.log("Search initiated by button click for:", searchQuery);};
 

@@ -5,8 +5,11 @@ import { useDispatch } from 'react-redux';
 import Loading from "../../../components/windows/loading/loading.jsx";
 import Rating from "react-rating-stars-component";
 import { MdOutlineAddLocationAlt } from "react-icons/md";
-import { fetchProductDetails, searchedProducts } from "../../../redux/features/products/productSlics.jsx";
+import { fetchProductDetails, fetchSearchedProducts } from "../../../redux/features/products/productSlics.jsx";
 import { fetchShopDetails } from "../../../redux/features/shop/shopSlice.jsx";
+
+import { RiStarSLine } from "react-icons/ri";
+import { LiaStarSolid } from "react-icons/lia";
 
 const ProductDetails = () => {
     const dispatch = useDispatch();
@@ -80,7 +83,7 @@ const ProductDetails = () => {
                     <Fragment>
                         <div className="ProductDetails">
                             <div className="pro-single-shop-container-3-1">
-                                <img src={selectedImage} alt="Selected Product" />
+                                <img src={selectedImage} alt="Selected Product" className="pro-single-shop-container-3-1-selected-img"/>
                                 {productDetail?.images?.length > 1 && (
                                     <div className='pro-single-shop-container-3-1-2'>
                                         {productDetail?.images?.map((img, index) => (
@@ -112,14 +115,14 @@ const ProductDetails = () => {
                                         <Rating
                                             count={5}
                                             size={15}
-                                            value={productDetail.ratings}
+                                            value={4} // Set the value to the appropriate rating value
                                             activeColor="#ffd700"
-                                            emptyColor="black"
-                                            edit={false}
+                                            emptyColor="#cccccc"
+                                            edit={false} // Set to false if you don't want it to be editable
                                             isHalf={true}
-                                            emptyIcon={<i className="far fa-star"></i>}
-                                            halfIcon={<i className="fa fa-star-half-alt"></i>}
-                                            filledIcon={<i className="fas fa-star"></i>}
+                                            emptyIcon={<RiStarSLine size={23} />}
+                                            halfIcon={<i class="fa-solid fa-star-half-stroke"></i>}
+                                            filledIcon={<LiaStarSolid size={19} />}
                                         />
                                         ({productDetail?.reviews?.length} Reviews)
                                     </span>
@@ -147,14 +150,8 @@ const ProductDetails = () => {
                                     <span>Description : </span>
                                     <p>{productDetail.description}</p>
                                 </div>
-                                {/* <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-                                    <button className="submitReview" style={{ width: "70%", height: "40px", fontSize: "14px", fontWeight: "500" }}>
-                                        Submit Review
-                                    </button>
-                                </div> */}
                             </div>
                         </div>
-                        <h3 className="reviewsHeading">REVIEWS</h3>
                     </Fragment>
                 )
             )}

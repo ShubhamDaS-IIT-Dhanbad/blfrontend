@@ -20,7 +20,8 @@ const CategoryPage = () => {
       const storedUserData = JSON.parse(localStorage.getItem('userData'));
       const pinCode = storedUserData?.pinCodes || '';
       const categoriesArray = Array.isArray(category) ? category : [category];
-      const categoriesString = categoriesArray.join(',');
+      const uniqueCategoriesArray = [...new Set(categoriesArray)];
+      const categoriesString = uniqueCategoriesArray.join(',');
 
       try {
         const response = await fetch(`https://bharat-lbackend.vercel.app/api/v1/product/products?pincode=${pinCode}&categories=${categoriesString}`);
@@ -40,8 +41,12 @@ const CategoryPage = () => {
   }, [category]);
 
   const productsPerPage = 50;
+
+  // Flatten the categories arrays from all products and then ensure uniqueness
   const uniqueBrands = [...new Set(products.map(product => product.brand))];
-  const uniqueCategories = [...new Set(products.map(product => product.category))];
+  const uniqueCategories = [
+    ...new Set(products.flatMap(product => product.category))
+  ];
 
   const handleNextPage = () => setCurrentPage(prevPage => prevPage + 1);
   const handlePrevPage = () => setCurrentPage(prevPage => prevPage - 1);

@@ -23,7 +23,7 @@ const CategoryFilter = ({ categories, selectedCategories, onChange }) => {
               checked={selectedCategories?.includes(category)}
               onChange={() => handleCheckboxChange(category)}
             />
-            {category}
+            {category.toUpperCase()}
           </label>
         ))}
       </div>

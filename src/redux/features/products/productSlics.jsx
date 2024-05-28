@@ -46,7 +46,7 @@ export const fetchSearchedProducts = createAsyncThunk(
       if (!response.ok) {
         throw new Error('Failed to fetch products');
       }
-      const products = await response.json();console.log("aa",keywords,products)
+      const products = await response.json();
       return products.products;
     } catch (error) {
       throw error;

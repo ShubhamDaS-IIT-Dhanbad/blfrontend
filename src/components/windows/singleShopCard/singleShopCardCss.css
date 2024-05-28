@@ -8,18 +8,17 @@
   height: 50vh;
   object-fit: cover;
 }
-.single-shop-container-3{
-}
+
 .single-shop-container-3-2{
   width: 100%;
 }
-/* @media (max-width: 600px) {
+@media (max-width: 1100px) {
  .single-shop-container-3{
   flex-direction: column;
   display: flex;background-color: aqua;
  }
   
-} */
+}
 .single-shop-container-3-2-retailer-rating{
   display: flex;gap: 5px;align-items: center;padding-bottom: 15px;
   margin-top: -12px;

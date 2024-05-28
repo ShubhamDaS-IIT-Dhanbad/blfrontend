@@ -1,5 +1,10 @@
+.single-shop-page{
+  display: flex;flex-direction: column;
+  justify-content: center;align-items: center;
+  min-height: 80vh;
+}
 .single-shop-container {
-  width: 100%;display: flex;
+  width: 100%;display: flex;min-height: 90vh;
   flex-direction: column;
   justify-content: center;align-items: center;
 }
@@ -13,8 +18,6 @@
   width: 100%;
 }
 
-  
-
 .single-shop-container-3-2-retailer-rating{
   display: flex;gap: 5px;align-items: center;padding-bottom: 15px;
   margin-top: -12px;
@@ -23,9 +26,9 @@
   width: 100%;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;color: black;
   font-size: 32px;
-  font-weight: 700;background-color: rgb(203, 231, 255);
+  font-weight: 700;background-color: rgb(191, 206, 234);
   text-align: center;
   padding: 50px;
 }
@@ -129,6 +132,6 @@ font-size: 16px;font-weight: 700;
 }
 .category-page-grid {
   display: grid;
-  grid-template-columns: repeat(4,12rem); 
+  grid-template-columns: repeat(5,12rem); 
   grid-gap: 20px;
 }

@@ -21,6 +21,3 @@ try {
 } catch (error) {
   console.error('Error rendering React application:', error);
 }
-
-
-

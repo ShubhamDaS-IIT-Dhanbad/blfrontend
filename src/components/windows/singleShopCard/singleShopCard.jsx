@@ -290,7 +290,7 @@ const CategoryPage = () => {
     if (error) return <div className="category-page-error-message">Error: {error}</div>;
 
     return (
-        <div className="category-page">
+        <div className="single-shop-page">
             <Helmet>
                 <title>Category Page</title>
                 <meta name="description" content="Description of your category page" />

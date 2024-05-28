@@ -130,13 +130,13 @@ const ProductDetails = () => {
                                 <div className="detailsBlock-3">
                                     <h1>{`₹${productDetail.price}`}</h1>
                                     <div className="detailsBlock-3-1">
-                                        <div className="detailsBlock-3-1-1" style={{ display: "flex", gap: "1px" }}>
+                                        {/* <div className="detailsBlock-3-1-1" style={{ display: "flex", gap: "1px" }}>
                                             <button onClick={decreaseQuantity} style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>-</button>
                                             <input type="number" value={quantity} readOnly />
                                             <button onClick={increaseQuantity} style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>+</button>
-                                        </div>
+                                        </div> */}
                                         <button disabled={productDetail?.quantityAvailable <= 0} style={{ width: "70%", height: "45px", fontSize: "12px", fontWeight: "900" }}>
-                                            BOOK YOUR VISIT
+                                            IN STOCK
                                         </button>
                                     </div>
                                     <p>

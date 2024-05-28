@@ -7,8 +7,8 @@ import Rating from "react-rating-stars-component";
 function featuredProductCard({ id, image, title, price }) {
     const navigate = useNavigate();
     return (
-        <div className="featured-Product-card">
-            <div className="featured-Product-card-top" onClick={() => navigate(`/${id}`)}>
+        <div className="featured-Product-card" onClick={() => navigate(`/product/${id}`)}>
+            <div className="featured-Product-card-top" >
                 <img className="featured-Product-card-top-image" src={image} alt="blue" />
             </div>
             <div className='featured-Product-card-bottom'>
@@ -36,14 +36,6 @@ function featuredProductCard({ id, image, title, price }) {
                 <div className="featured-Product-shop-detail">
                     <span className="shoe-name"></span>
                 </div>
-                {/* <div className='featured-Product-card-button-container'>
-                    <div className="button">
-                        <button onClick={() => navigate(`/${id}`)}>VIEW DETAIL</button>
-                    </div>
-                    <div className="button">
-                        <button>ADD TO CART</button>
-                    </div>
-                </div> */}
             </div>
         </div>
     )

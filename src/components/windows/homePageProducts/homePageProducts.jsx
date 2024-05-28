@@ -52,7 +52,7 @@ const HomePageCategoryProducts = ({ categories, products, loading }) => {
             {
                 breakpoint: 500,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 4,
                     slidesToScroll: 1
                 }
             }

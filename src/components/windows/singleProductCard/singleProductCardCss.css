@@ -1,6 +1,6 @@
 .ProductDetails {
   background-color: #ffffff;
-  width: 100vw;
+  width: 100vw;min-height: 90vh;
   justify-content: center;
   display: flex;
   padding: 50px;

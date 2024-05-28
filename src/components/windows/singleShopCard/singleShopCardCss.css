@@ -15,7 +15,7 @@
 @media (max-width: 1100px) {
  .single-shop-container-3{
   flex-direction: column;
-  display: flex;background-color: aqua;
+  display: flex;
  }
   
 }

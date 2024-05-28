@@ -202,6 +202,8 @@ import { fetchShopDetails } from "../../../redux/features/shop/shopSlice";
 import { MdOutlineAddLocationAlt } from 'react-icons/md';
 import Carousel from 'react-material-ui-carousel';
 import Rating from "react-rating-stars-component";
+import { RiStarSLine } from "react-icons/ri";
+import { LiaStarSolid } from "react-icons/lia";
 import './singleShopCardCss.css'
 const CategoryPage = () => {
     const dispatch = useDispatch();
@@ -297,6 +299,17 @@ const CategoryPage = () => {
                 {shopDetails?.shopName?.toUpperCase()}
                 <MdOutlineAddLocationAlt size={45} className="single-shop-container-2-1" onClick={redirectToMap} />
             </div>
+            <div className="category-nav">
+                {categories.map(category => (
+                    <button
+                        key={category}
+                        className={`category-nav-button ${selectedCategory === category ? 'active' : ''}`}
+                        onClick={() => setSelectedCategory(category)}
+                    >
+                        {category.toUpperCase()}
+                    </button>
+                ))}
+            </div>
             <div className="single-shop-container-3">
                 <div className="single-shop-container-3-1">
                     <Carousel className="single-shop-container-3-1-1">
@@ -319,17 +332,17 @@ const CategoryPage = () => {
                     <div className="single-shop-container-3-2-retailer-rating">
                         {shopDetails?.ratings}
                         <Rating
-                            count={5}
-                            size={20}
-                            value={shopDetails?.ratings}
-                            activeColor="#ffd700"
-                            emptyColor="black"
-                            edit={false}
-                            isHalf={true}
-                            emptyIcon={<i className="far fa-star"></i>}
-                            halfIcon={<i className="fa fa-star-half-alt"></i>}
-                            filledIcon={<i className="fas fa-star"></i>}
-                        />
+                                count={5}
+                                size={15}
+                                value={4} // Set the value to the appropriate rating value
+                                activeColor="#ffd700"
+                                emptyColor="#cccccc"
+                                edit={false} // Set to false if you don't want it to be editable
+                                isHalf={true}
+                                emptyIcon={<RiStarSLine size={23}/>}
+                                halfIcon={<i class="fa-solid fa-star-half-stroke"></i>}
+                                filledIcon={<LiaStarSolid size={19}/>}
+                            />
                     </div>
                     <div className="single-shop-container-3-2-phn">
                         <div className="single-shop-container-3-2-phn-1">PHN:</div>
@@ -341,17 +354,7 @@ const CategoryPage = () => {
                     </div>
                 </div>
             </div>
-            <div className="category-nav">
-                {categories.map(category => (
-                    <button
-                        key={category}
-                        className={`category-nav-button ${selectedCategory === category ? 'active' : ''}`}
-                        onClick={() => setSelectedCategory(category)}
-                    >
-                        {category.toUpperCase()}
-                    </button>
-                ))}
-            </div>
+           
 
             <div className='category-nav-container'>
                 <FilterSection

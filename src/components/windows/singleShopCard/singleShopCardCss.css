@@ -12,13 +12,9 @@
 .single-shop-container-3-2{
   width: 100%;
 }
-@media (max-width: 1100px) {
- .single-shop-container-3{
-  flex-direction: column;
-  display: flex;
- }
+
   
-}
+
 .single-shop-container-3-2-retailer-rating{
   display: flex;gap: 5px;align-items: center;padding-bottom: 15px;
   margin-top: -12px;

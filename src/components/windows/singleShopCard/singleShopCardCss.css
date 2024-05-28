@@ -4,7 +4,7 @@
   min-height: 80vh;
 }
 .single-shop-container {
-  width: 100%;display: flex;min-height: 90vh;
+  width: 100%;display: flex;min-height: 100vh;
   flex-direction: column;
   justify-content: center;align-items: center;
 }
@@ -134,4 +134,9 @@ font-size: 16px;font-weight: 700;
   display: grid;
   grid-template-columns: repeat(5,12rem); 
   grid-gap: 20px;
+}
+@media (max-width: 1080px) {
+  .category-page-grid {
+    grid-template-columns: repeat(4,12rem); 
+  }
 }

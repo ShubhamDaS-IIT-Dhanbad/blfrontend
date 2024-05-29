@@ -63,7 +63,7 @@ const WindowsApp = () => {
     <ColorModeContext.Provider value={{ colorMode, toggleColorMode }}>
       <HelmetProvider>
         <Helmet>
-          <title>Bharat Shop</title>
+          <title>Bharat Linker</title>
           <meta name="description" content="Your one-stop shop for all your needs." />
         </Helmet>
         <Router>

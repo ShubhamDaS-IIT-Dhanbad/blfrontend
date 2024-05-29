@@ -36,27 +36,31 @@ const Footer = () => {
                         <div className="text">Email: bharatlinker@gmail.com</div>
                     </div>
                     <div className="text">
-                        For any problem you are facing, feel free to contact us. We are here to help you out.
+                    Feel free to contact us   for assistance. 
+                    Please understand that as we're in the development phase, 
+                    our response time may be delayed.
                     </div>
                 </div>
                 <div className="col">
-                    <div className="title">Categories</div>
-                    <span className="text">Headphones</span>
-                    <span className="text">Smart Watches</span>
-                    <span className="text">Bluetooth Speakers</span>
-                    <span className="text">Wireless Earbuds</span>
-                    <span className="text">Home Theatre</span>
-                    <span className="text">Projectors</span>
+                    <div className="title">Our Aim</div>
+                    <div className="text">
+                    Our aim is to connect and centralize all rural 
+                retailer shops so that people can see their products 
+                online. This will make it easy for everyone to find 
+                shops as well as the products they are selling in their locality.
+                    </div>
                 </div>
                 <div className="col">
-                    <div className="title">Pages</div>
-                    <span className="text">Home</span>
-                    <span className="text">About</span>
-                    <span className="text">Privacy Policy</span>
-                    <span className="text">Returns</span>
-                    <span className="text">Terms & Conditions</span>
-                    <span className="text">Contact Us</span>
+                    <div className="title">Suggestion</div>
+                    <div className="text">For the best user experience,
+                     we recommend using a laptop or PC. If you're using a mobile device,
+                      please utilize desktop mode for optimal viewing. Mobile optimization is 
+                      currently under development, 
+                    and we'll soon be back with a more user-friendly update. Thank you for your understanding!
+                    </div>
                 </div>
+              
+
             </div>
         </div>
         </>

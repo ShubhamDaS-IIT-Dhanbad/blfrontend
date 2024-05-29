@@ -3,6 +3,7 @@ import axios from 'axios';
 import './uploadCss.css';
 
 function UploadProduct({ id, pinCodes }) {
+    console.log("id",id,pinCodes)
     const [formData, setFormData] = useState({
         title: '',
         description: '',

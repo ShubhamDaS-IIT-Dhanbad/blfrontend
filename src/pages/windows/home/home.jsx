@@ -62,7 +62,7 @@ const Home = () => {
   return (
     <div id='home-div-container'>
       <Helmet>
-        <title>Bharat|Shop</title>
+        <title>Bharat|Linker</title>
         <meta name="description" content="Description of your home page" />
       </Helmet>
       <div id='home-div'>

@@ -5,19 +5,33 @@ import Carousel from 'react-material-ui-carousel';
 
 import women from './leno.webp'
 import electronics from './mo.jpeg'
-import moto1 from './moto.png'
-import moto2 from './moto.png'
 import moto3 from './motobanner.jpeg'
 import samsung from './samsung.png'
+import b1 from './b1.jpg'
+import bb2 from './bb2.jpg'
+import bb3 from './bb3.jpg'
+import bb4 from './bb4.jpg'
+import bb5 from './bb5.jpg'
+import bb6 from './bb6.jpg'
+import bb7 from './bb7.jpg'
+import bb8 from './bb8.jpg'
+import bb9 from './bb9.jpg'
 
 function Carousal() {
   const data = [
     { id: 2, url: women },
     { id: 3, url: electronics },
-    { id: 4, url: moto1 },
-    { id: 5, url: moto2 },
     { id: 6, url: moto3 },
-    { id: 7, url: samsung }
+    { id: 7, url: samsung },
+    { id: 8, url: b1 },
+    { id: 9, url: bb2 },
+    { id: 10, url: bb3 },
+    { id: 11, url: bb4 },
+    { id: 12, url: bb5 },
+    { id: 13, url: bb6 },
+    { id: 14, url: bb7 },
+    { id: 15, url: bb8 },
+    { id: 16, url: bb9 },
 ];
 
 const settings = {

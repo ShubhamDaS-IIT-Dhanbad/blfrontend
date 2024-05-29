@@ -9,6 +9,11 @@
         min-height: 2000px;
         background-color: #5e6062;
     }
+    .pin-code-manager {
+        max-width: 800px;
+        height: 450px;
+        
+      }
   }
   
 .pin-code-manager {

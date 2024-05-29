@@ -87,7 +87,6 @@
 /* Pincode Container */
 .pincode-container {
     display: flex;
-    min-width: 75px;
     max-width:142px;
     gap: 1.5px;
     height: 75%;
@@ -101,7 +100,7 @@
 }
 
 .pin-code-list {
-    width: 73px;
+    min-width: 73px;
     display: flex;
     font-size: 13px;
     justify-content: center;

@@ -4,7 +4,6 @@ import "./carousalCss.css"
 import Carousel from 'react-material-ui-carousel';
 
 import electronics from './mo.jpeg'
-import moto3 from './motobanner.jpeg'
 import samsung from './samsung.png'
 import bb2 from './bb2.jpg'
 import bb3 from './bb3.jpg'

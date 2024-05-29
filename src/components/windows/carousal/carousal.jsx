@@ -3,11 +3,9 @@ import "./carousalCss.css"
 
 import Carousel from 'react-material-ui-carousel';
 
-import women from './leno.webp'
 import electronics from './mo.jpeg'
 import moto3 from './motobanner.jpeg'
 import samsung from './samsung.png'
-import b1 from './b1.jpg'
 import bb2 from './bb2.jpg'
 import bb3 from './bb3.jpg'
 import bb4 from './bb4.jpg'
@@ -19,11 +17,10 @@ import bb9 from './bb9.jpg'
 
 function Carousal() {
   const data = [
-    { id: 2, url: women },
+ 
     { id: 3, url: electronics },
     { id: 6, url: moto3 },
     { id: 7, url: samsung },
-    { id: 8, url: b1 },
     { id: 9, url: bb2 },
     { id: 10, url: bb3 },
     { id: 11, url: bb4 },

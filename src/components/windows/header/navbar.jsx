@@ -118,8 +118,8 @@ function Navbar() {
                         ) : (
                             <div className="log-in-log-out">
                                 <li><Link to="/addpincode" className="link-properties">ADD | PINCODE</Link></li>
-                                <li>|</li>
-                                <li><Link to="/signup" className="link-properties">SIGN UP</Link></li>
+                                {/* <li>|</li>
+                                <li><Link to="/signup" className="link-properties">SIGN UP</Link></li> */}
                             </div>
                         )}
                     </ul>

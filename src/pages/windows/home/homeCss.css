@@ -8,5 +8,12 @@
 }
 #home-div-container{
     margin-top: 1.3px;
-    min-height: 5000px;
+    min-height: 90vh;
 }
+
+@media (max-width: 1080px) {
+    #home-div-container{
+      min-height: 2000px;
+    }
+    
+  }

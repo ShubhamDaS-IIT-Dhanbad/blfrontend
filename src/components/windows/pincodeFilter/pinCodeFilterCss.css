@@ -1,9 +1,15 @@
 /* pinCodeFilterCss.css */
 .pin-code-manager-conatiner{
-    min-height: 1200px;
+    min-height: 90vh;
     display: flex;flex-direction: column;
     justify-content: center;align-items: center;
 }
+@media (max-width: 1100px) {
+    .pin-code-manager-conatiner{
+        min-height: 1300px;
+    }
+  }
+  
 .pin-code-manager {
     max-width: 400px;padding: 5px;width: 500px;
     height: 250px;color: white;

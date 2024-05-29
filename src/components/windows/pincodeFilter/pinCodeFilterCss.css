@@ -1,6 +1,6 @@
 /* pinCodeFilterCss.css */
 .pin-code-manager-conatiner{
-    min-height: 95vh;
+    min-height: 1200px;
     display: flex;flex-direction: column;
     justify-content: center;align-items: center;
 }
@@ -37,7 +37,7 @@
     padding: 10px;
     border: 1px solid #ccc;background-color: #333;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 16px;color: white;
     margin-right: 10px;
   }
   

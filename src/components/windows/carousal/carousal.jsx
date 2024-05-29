@@ -19,7 +19,6 @@ function Carousal() {
   const data = [
  
     { id: 3, url: electronics },
-    { id: 6, url: moto3 },
     { id: 7, url: samsung },
     { id: 9, url: bb2 },
     { id: 10, url: bb3 },

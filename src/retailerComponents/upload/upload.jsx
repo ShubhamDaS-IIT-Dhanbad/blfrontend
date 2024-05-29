@@ -3,7 +3,7 @@ import axios from 'axios';
 import './uploadCss.css';
 
 function UploadProduct({ id, pinCodes }) {
-    console.log("id",id,pinCodes)
+    console.log("id", id, pinCodes);
     const [formData, setFormData] = useState({
         title: '',
         description: '',
@@ -49,7 +49,7 @@ function UploadProduct({ id, pinCodes }) {
             keywords,
         } = formData;
 
-        const mandatoryFields = [title, description, price, discountedPrice, quantityAvailable, category, brand, images.length > 0];
+        const mandatoryFields = [title, description, price, discountedPrice, quantityAvailable, category, brand];
         if (mandatoryFields.some(field => !field)) {
             setErrorMessage('Please fill in all mandatory fields.');
             return;
@@ -83,8 +83,13 @@ function UploadProduct({ id, pinCodes }) {
             data.append('images', image);
         });
 
+        // Log the form data for debugging
+        for (let [key, value] of data.entries()) {
+            console.log(key, value);
+        }
+
         try {
-            const response = await axios.post(`https://bharat-lbackend.vercel.app/api/v1/product/addproduct`, data, {
+            const response = await axios.post(`http://localhost:12000/api/v1/product/addproduct`, data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
@@ -151,7 +156,7 @@ function UploadProduct({ id, pinCodes }) {
                                     style={{ display: 'none' }}
                                     required
                                 />
-                            </div> 
+                            </div>
                         </div>
                         <div className="set">
                             <div className="pets-breed">

@@ -55,6 +55,10 @@ const FeaturedProduct = ({ products, loading }) => {
         sliderRef.slickPrev();
     };
 
+    // If there are no featured products, return null to prevent rendering the FeaturedProduct component
+    if (!products.some(product => product.featured)) {
+        return null;
+    }
 
     return (
         <div className='home-page-featured-products-container-parent'>
@@ -97,9 +101,7 @@ const FeaturedProduct = ({ products, loading }) => {
             </div>
         </div>
     );
-
 };
-
 export default FeaturedProduct;
 
 

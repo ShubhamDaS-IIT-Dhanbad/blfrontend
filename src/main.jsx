@@ -16,7 +16,7 @@ try {
     <React.StrictMode>
       <Provider store={store}>
         <HelmetProvider>
-          <>hihi</>
+          <App />
         </HelmetProvider>
       </Provider>
     </React.StrictMode>

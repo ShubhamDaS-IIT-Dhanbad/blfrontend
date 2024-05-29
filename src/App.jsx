@@ -33,7 +33,9 @@ const App = React.memo(() => {
   useEffect(() => {
     initApp();
   }, [initApp]);
-  return <Windows />;
+  return <>
+  hi shubham
+  </>;
 });
 
 export default App;

@@ -22,7 +22,7 @@ export const fetchProductsByShopId = createAsyncThunk(
   'retailer/fetchProductsByShopId',
   async (shopId, { rejectWithValue }) => {
     try {
-      const response = await fetch(`https://bshopbackend.vercel.app/api/v1/product/retailer/products/${shopId}`);
+      const response = await fetch(`https://bharat-lbackend.vercel.app/api/v1/product/retailer/products/${shopId}`);
       if (!response.ok) {
         throw new Error('Failed to fetch products');
       }

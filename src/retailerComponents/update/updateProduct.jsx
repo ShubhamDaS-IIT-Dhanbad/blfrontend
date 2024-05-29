@@ -23,7 +23,7 @@ function UpdateProduct({ pinCodes }) {
     useEffect(() => {
         const fetchProductDetails = async () => {
             try {
-                const response = await axios.get(`https://bshopbackend-2r2jqqe6d-shubhamdas-iit-dhanbads-projects.vercel.app/product/${id}`);
+                const response = await axios.get(`https://bharat-lbackend.vercel.app/product/${id}`);
                 const product = response.data;
 
                 setTitle(product.title);

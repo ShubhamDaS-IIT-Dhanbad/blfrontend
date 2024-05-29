@@ -23,8 +23,13 @@ function UploadProduct({ id, pinCodes }) {
 
     const handleChange = (e) => {
         const { name, value, type, checked, files } = e.target;
-        const newValue = type === 'checkbox' ? checked : files || value;
-        setFormData(prevData => ({ ...prevData, [name]: newValue }));
+        if (type === 'checkbox') {
+            setFormData(prevData => ({ ...prevData, [name]: checked }));
+        } else if (type === 'file') {
+            setFormData(prevData => ({ ...prevData, [name]: Array.from(files) }));
+        } else {
+            setFormData(prevData => ({ ...prevData, [name]: value }));
+        }
     };
 
     const handleSubmit = async (e) => {
@@ -61,15 +66,15 @@ function UploadProduct({ id, pinCodes }) {
         data.append('featuredProduct', featuredProduct);
         data.append('shop', id);
 
-        pinCodes.forEach((pincode, index) => {
+        pinCodes?.forEach((pincode, index) => {
             data.append(`pinCodes[${index}]`, pincode);
         });
 
-        category.split(',').forEach((cat, index) => {
+        category?.split(',').forEach((cat, index) => {
             data.append(`category[${index}]`, cat.trim());
         });
 
-        keywords.split(',').forEach((keyword, index) => {
+        keywords?.split(',').forEach((keyword, index) => {
             data.append(`keyWords[${index}]`, keyword.trim());
         });
 
@@ -120,9 +125,7 @@ function UploadProduct({ id, pinCodes }) {
     return (
         <div className="upload-container">
             <form className="row g-3 upload-form-container" onSubmit={handleSubmit}>
-                <div className="left-container">
-                    {/* Placeholder for any additional content or images */}
-                </div>
+                <div className="left-container"></div>
                 <div className="right-container">
                     <header>
                         <h1>Stand Out: Upload Your Product Listings Here!</h1>
@@ -147,8 +150,7 @@ function UploadProduct({ id, pinCodes }) {
                                     style={{ display: 'none' }}
                                     required
                                 />
-                            </div>
-                            
+                            </div> 
                         </div>
                         <div className="set">
                             <div className="pets-breed">

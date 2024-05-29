@@ -16,6 +16,7 @@ function AllShopPage() {
   const shopsPerPage = 10;
 
   const shops = useSelector(state => state.shop.shops);
+  const pinCode = useSelector((state) => state.pinCode.pinCodes);
 
   const indexOfLastShop = currentPage * shopsPerPage;
   const indexOfFirstShop = indexOfLastShop - shopsPerPage;
@@ -30,9 +31,9 @@ function AllShopPage() {
 
     const fetchData = async () => {
       try {
-        const userDataString = localStorage.getItem('userData');
-        const userData = userDataString ? JSON.parse(userDataString) : null;
-        const pinCode = userData ? userData.pinCodes.join(', ') : "";
+        // const userDataString = localStorage.getItem('userData');
+        // const userData = userDataString ? JSON.parse(userDataString) : null;
+        // const pinCode = userData ? userData.pinCodes.join(', ') : "";
         await dispatch(fetchShop({ pinCode }));
         setDataLoaded(true); // Set dataLoaded to true after fetching completes
       } catch (error) {

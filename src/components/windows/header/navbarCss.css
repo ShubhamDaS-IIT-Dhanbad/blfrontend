@@ -87,6 +87,7 @@
 /* Pincode Container */
 .pincode-container {
     display: flex;
+    min-width: 75px;
     max-width:142px;
     gap: 1.5px;
     height: 75%;
@@ -242,5 +243,6 @@
 
 .log-in-log-out li {
     font-size: 23px;
+    font-weight: 700;
     color: #ffffff;
 }

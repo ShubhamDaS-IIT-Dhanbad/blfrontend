@@ -26,6 +26,8 @@ const initialData = [
 
 const Home = () => {
   const dispatch = useDispatch();
+  const pinCode = useSelector((state) => state.pinCode.pinCodes);
+
   const { products, loading: loadingProducts, error } = useSelector(state => state.products);
   const [loading, setLoading] = useState(true);
   const [uniqueCategories, setUniqueCategories] = useState([]);
@@ -33,11 +35,10 @@ const Home = () => {
   useEffect(() => {
     // Scroll to the top of the page when the component mounts
     window.scrollTo(0, 0);
-
-    const userDataString = localStorage.getItem('userData');
-    const userData = userDataString ? JSON.parse(userDataString) : null;
-    const pinCodesString = userData ? userData.pinCodes.join(', ') : "";
-    const pinCode = pinCodesString ? pinCodesString : "";
+    // const userDataString = localStorage.getItem('userData');
+    // const userData = userDataString ? JSON.parse(userDataString) : null;
+    // const pinCodesString = userData ? userData.pinCodes.join(', ') : "";
+    // const pinCode = pinCodesString ? pinCodesString : "";
     dispatch(fetchProducts({ pinCode }));
     setLoading(false);
   }, [dispatch]);

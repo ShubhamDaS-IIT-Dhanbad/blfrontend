@@ -4,6 +4,7 @@ import setUser from "../features/userData/userDataSlice.jsx";
 import productReducer from "../features/products/productSlics.jsx";
 import retailerSlice from "../features/retailer/retailerSlice.jsx";
 import shopSlice from "../features/shop/shopSlice.jsx";
+import pinCodeReducer from "../features/pincode/pinCode.jsx";
 
 const store = configureStore({
     reducer: {
@@ -11,7 +12,8 @@ const store = configureStore({
         user: setUser,
         products: productReducer,
         retailer: retailerSlice,
-        shop: shopSlice
+        shop: shopSlice,
+        pinCode: pinCodeReducer,
     },
     // Additional configuration options can be added here if needed
 });

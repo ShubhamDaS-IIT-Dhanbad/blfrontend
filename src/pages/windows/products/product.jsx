@@ -9,6 +9,8 @@ import FilterSection from '../../../components/windows/filterSection/filterSecti
 
 const Product = () => {
   const dispatch = useDispatch();
+  // home page pincode
+  const pinCode = useSelector((state) => state.pinCode.pinCodes);
   const { products, loading, error } = useSelector(state => state.products);
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 32;
@@ -21,12 +23,12 @@ const Product = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const userDataString = localStorage.getItem('userData');
-        const userData = userDataString ? JSON.parse(userDataString) : null;
-        const pinCodesString = userData ? userData.pinCodes.join(', ') : "";
-        const pinCode = pinCodesString ? pinCodesString : "";
-        await dispatch(fetchProducts({ pinCode })); // Await the dispatch
-        setDataLoaded(true); // Set dataLoaded to true after fetching completes
+        // const userDataString = localStorage.getItem('userData');
+        // const userData = userDataString ? JSON.parse(userDataString) : null;
+        // const pinCodesString = userData ? userData.pinCodes.join(', ') : "";
+        // const pinCode = pinCodesString ? pinCodesString : "";
+        await dispatch(fetchProducts({ pinCode })); 
+        setDataLoaded(true);
       } catch (error) {
         console.error('Error fetching products:', error);
       }

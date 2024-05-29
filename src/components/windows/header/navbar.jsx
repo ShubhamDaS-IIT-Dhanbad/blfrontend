@@ -12,6 +12,8 @@ function Navbar() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    const pinCodes = useSelector((state) => state.pinCode.pinCodes);
+
     const [searchQuery, setSearchQuery] = useState('');
     const [userData, setUserData] = useState({ fullName: "Guest" });
     const [isLoading, setIsLoading] = useState(true);
@@ -76,10 +78,18 @@ function Navbar() {
                             onKeyDown={handleKeyDown} 
                             />
                      
-                            { isAuthenticated && (!isLoading)&&(
+                            {/* { isAuthenticated && (!isLoading)&&(
                                   <div className='pincode-container'>
                                     {
                                     userData?.pinCodes?.map((pinCode, index) => (
+                                        <div className='pin-code-list' key={index}>{console.log("ko",pinCode)}{pinCode}+</div>
+                                    ))}
+                               </div>
+                            )} */}
+                             {(
+                                  <div className='pincode-container'>
+                                    {
+                                    pinCodes?.map((pinCode, index) => (
                                         <div className='pin-code-list' key={index}>{console.log("ko",pinCode)}{pinCode}+</div>
                                     ))}
                                </div>
@@ -107,9 +117,9 @@ function Navbar() {
                             </div>
                         ) : (
                             <div className="log-in-log-out">
-                                <li><Link to="/login" className="link-properties">LOGIN</Link></li>
-                                <li>|</li>
-                                <li><Link to="/signup" className="link-properties">SIGN UP</Link></li>
+                                <li><Link to="/addpincode" className="link-properties">ADD | PINCODE</Link></li>
+                                {/* <li>|</li>
+                                <li><Link to="/signup" className="link-properties">SIGN UP</Link></li> */}
                             </div>
                         )}
                     </ul>

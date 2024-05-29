@@ -16,6 +16,7 @@ const SingleProduct = lazy(() => import('./pages/windows/singleProduct/singlePro
 const Products = lazy(() => import('./pages/windows/products/product.jsx'));
 const Account = lazy(() => import('./pages/windows/user/user.jsx'));
 const Login = lazy(() => import('./components/windows/login/login.jsx'));
+const PinCodeFilter = lazy(() => import('./components/windows/pincodeFilter/pinCodeFilter.jsx'))
 const Signup = lazy(() => import('./components/windows/signup/signuppage.jsx'));
 const PageNotFound = lazy(() => import('./components/windows/pageNotFound/pageNotFound.jsx'));
 const CategoryPage = lazy(() => import('./pages/windows/CategoryPage/CategoryPage.jsx'));
@@ -72,7 +73,7 @@ const WindowsApp = () => {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/account" element={<AuthRouteWrapper element={<Account />} />} />
-                <Route path="/login" element={<Login />} />
+                <Route path="/addpincode" element={<PinCodeFilter />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/products" element={<Products />} />
                 <Route path="/category/:category" element={<CategoryPage />} />

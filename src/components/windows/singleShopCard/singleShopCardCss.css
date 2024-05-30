@@ -156,7 +156,6 @@
     grid-template-columns: repeat(4, 12rem);
   }
   .category-nav-container{
-   min-height: 1000px;
-   background-color: aqua;
+   min-height: 800px;
   }
 }

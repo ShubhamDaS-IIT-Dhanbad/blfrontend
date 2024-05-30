@@ -142,7 +142,7 @@ const CategoryPage = () => {
                         <Rating
                             count={5}
                             size={15}
-                            value={shopDetails?.ratings || 4} // Use the actual rating value
+                            value={shopDetails?.ratings || 5} // Use the actual rating value
                             activeColor="#ffd700"
                             emptyColor="#cccccc"
                             edit={false} // Set to false if you don't want it to be editable

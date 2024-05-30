@@ -5,6 +5,21 @@
   display: flex;
   padding: 50px;
 }
+@media (max-width: 1080px) {
+  .detailsBlock-1 h2 {
+    color: #bd0d0d;
+    font-size: 1000px;
+  }
+  .ProductDetails {
+    min-height: 1500px;
+    width: 100%;
+  }
+  .pro-single-shop-container-3-1{
+    max-width: 600px;
+  }
+ 
+}
+
 .ProductDetails-left {
   padding-left: 20px;
   position: sticky;
@@ -40,10 +55,10 @@
   width: 70%;
 }
 
-.detailsBlock-1>h2 {
+.detailsBlock-1 h2 {
   color: #363636;
- 
-  font: 400 1.8vmax "Franklin Gothic Medium";
+ font-size: 20px;font-weight: 800;
+  font-family: "Franklin Gothic Medium";
 }
 
 .detailsBlock-1>p {

@@ -59,7 +59,7 @@ const SearchProduct = () => {
   }
 
   if (!searchedProducts || searchedProducts.length === 0) {
-    return <div className="search-empty-message" style={{ minHeight: "100vh" }}>No products available</div>;
+    return <div className="search-empty-message">No products available</div>;
   }
 
   const filteredProducts = searchedProducts.filter(product => {

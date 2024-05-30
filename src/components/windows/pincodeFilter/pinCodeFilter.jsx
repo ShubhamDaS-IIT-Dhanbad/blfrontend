@@ -13,8 +13,6 @@ function PinCodeManager() {
     if (pinCodePattern.test(pinCode)) {
       dispatch(addPinCode(pinCode));
       setPinCode('');
-      // Scroll to top after adding pin code
-      window.scrollTo(0, 0);
     } else {
       alert('Invalid pin code. Please enter a 6-digit number.');
     }
@@ -22,8 +20,6 @@ function PinCodeManager() {
 
   const handleRemovePinCode = (code) => {
     dispatch(removePinCode(code));
-    // Scroll to top after removing pin code
-    window.scrollTo(0, 0);
   };
 
   return (
@@ -38,8 +34,8 @@ function PinCodeManager() {
             placeholder="Enter pin code"
             className="pin-code-input"
           />
-          <button onClick={handleAddPinCode} className="add-button">Add Pin Code</button>
-        </div>
+        </div><button onClick={handleAddPinCode} className="add-button">Add Pin Code</button>
+
       </div>
       <ul className="pin-code-list-home">
         {pinCodes.map((code, index) => (
@@ -53,3 +49,4 @@ function PinCodeManager() {
 }
 
 export default PinCodeManager;
+

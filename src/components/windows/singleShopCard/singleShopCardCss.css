@@ -170,5 +170,6 @@
     grid-template-columns: repeat(4, 12rem);
   }
   .single-shop-page{
+    margin-top: -200px;
   }
 }

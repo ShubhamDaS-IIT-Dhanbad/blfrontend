@@ -153,14 +153,14 @@ function Navbar() {
                         <Link className="link-properties" to={"/shop"}>SHOP</Link>
                         {menu === "SHOP" && <div className='nav-menu-left-hr-line' style={{ backgroundColor: "red" }}></div>}
                     </li>
-                    {/* <li onClick={() => setMenu("TESTIMONIAL")}>
+                    <li onClick={() => setMenu("TESTIMONIAL")}>
                         <Link className="link-properties">TESTIMONIAL</Link>
                         {menu === "TESTIMONIAL" && <div className='nav-menu-left-hr-line' style={{ backgroundColor: "#9d94ff" }}></div>}
                     </li>
                     <li onClick={() => setMenu("CONTACT")}>
                         <Link className="link-properties" to="/contact">CONTACT</Link>
                         {menu === "CONTACT" && <div className='nav-menu-left-hr-line' style={{ backgroundColor: "#c780e8" }}></div>}
-                    </li> */}
+                    </li>
                 </ul>
             </div>
         </>

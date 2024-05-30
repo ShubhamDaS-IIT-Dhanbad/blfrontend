@@ -40,11 +40,13 @@ export const fetchRetailerDataFromLocalStorage = createAsyncThunk(
   async ({ dispatch }) => {
     try {
       const retailerData = JSON.parse(localStorage.getItem('retailerData'));
+      console.log("retailerdata",retailerData.data.retailer)
       if (!retailerData) {
         throw new Error('No retailer data found in localStorage');
       }
-      dispatch(setRetailerData(retailerData));
-      const shopId = retailerData.data.data.retailer.shop;
+      dispatch(setRetailerData(retailerData.data.retailer));
+      const shopId = retailerData.data.retailer.shop;
+      console.log("shopid",shopId)
       if (shopId) {
         await dispatch(fetchShopData(shopId));
         await dispatch(fetchProductsByShopId(shopId));

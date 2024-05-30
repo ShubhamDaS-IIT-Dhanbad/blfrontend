@@ -37,6 +37,7 @@ function LoginPage() {
                 { phoneNumber, password }
             );console.log(response)
             if (response.status === 200) {
+                console.log("shubhamdas",response)
                 localStorage.setItem('retailerData', JSON.stringify(response.data));
                 navigate('/retailer/products');
             } else {

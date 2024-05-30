@@ -19,7 +19,7 @@ function Retailer() {
   const shopData = useSelector((state) => state.retailer.shopData);
   const retailerData = useSelector((state) => state.retailer.retailerData);
   const products = useSelector((state) => state.retailer.products);
-
+console.log("kokok",shopData)
   const handleDeleteProduct = async (id) => {
     try {
       const response = await axios.post(`https://bharat-lbackend.vercel.app/product/deleteproduct/${id}`);

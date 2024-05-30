@@ -7,7 +7,7 @@ import { IoIosLogOut } from "react-icons/io";
 
 function RetailerNavbar({ shopData }) {
     const navigate = useNavigate();
-
+console.log("koko",shopData)
     const Logout = (() => {
         alert("Logging Out")
         localStorage.removeItem('retailerData');

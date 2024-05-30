@@ -170,6 +170,6 @@
     grid-template-columns: repeat(4, 12rem);
   }
   .single-shop-page{
-   min-height: 1200px;
+   min-height: 3000px;
   }
 }

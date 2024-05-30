@@ -171,5 +171,6 @@
   }
   .single-shop-page{
     min-height: 1900px;
+    margin-top: -210px;
   }
 }

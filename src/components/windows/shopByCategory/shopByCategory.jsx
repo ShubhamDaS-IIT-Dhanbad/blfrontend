@@ -11,15 +11,15 @@ const Category = ({ data }) => {
     const settings = {
         infinite: true,
         speed: 800,
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 1,
         initialSlide: 0,
-        swipeToSlide: true, // Allow swipe to slide
+        swipeToSlide: true,
         responsive: [
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 2,
                     slidesToScroll: 3,
                     infinite: true,
                     dots: true
@@ -36,7 +36,7 @@ const Category = ({ data }) => {
             {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 2,
                     slidesToScroll: 1
                 }
             }
@@ -58,6 +58,9 @@ const Category = ({ data }) => {
                 <span className="shop-by-category-name-bar"></span>
             </div>
             <div className="slider-container">
+                <button className="slider-btn prev-btn" onClick={goToPrevSlide}>
+                    <IoIosArrowBack size={50}  />
+                </button>
                 <div className="row gx-1 sliderParent">
                     <Slider {...settings} ref={sliderRef}>
                         {data.map(item => (
@@ -69,6 +72,9 @@ const Category = ({ data }) => {
                         ))}
                     </Slider>
                 </div>
+                <button className="slider-btn next-btn" onClick={goToNextSlide}>
+                    <IoIosArrowForward size={50} />
+                </button>
             </div>
         </div>
     );

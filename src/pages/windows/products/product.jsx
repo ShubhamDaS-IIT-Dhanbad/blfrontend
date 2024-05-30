@@ -9,7 +9,6 @@ import FilterSection from '../../../components/windows/filterSection/filterSecti
 
 const Product = () => {
   const dispatch = useDispatch();
-  // home page pincode
   const pinCode = useSelector((state) => state.pinCode.pinCodes);
   const { products, loading, error } = useSelector(state => state.products);
   const [currentPage, setCurrentPage] = useState(1);
@@ -18,23 +17,19 @@ const Product = () => {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [uniqueBrands, setUniqueBrands] = useState([]);
   const [uniqueCategories, setUniqueCategories] = useState([]);
-  const [dataLoaded, setDataLoaded] = useState(false); // State to track if data has been loaded
+  const [dataLoaded, setDataLoaded] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // const userDataString = localStorage.getItem('userData');
-        // const userData = userDataString ? JSON.parse(userDataString) : null;
-        // const pinCodesString = userData ? userData.pinCodes.join(', ') : "";
-        // const pinCode = pinCodesString ? pinCodesString : "";
-        await dispatch(fetchProducts({ pinCode })); 
+        await dispatch(fetchProducts({ pinCode }));
         setDataLoaded(true);
       } catch (error) {
         console.error('Error fetching products:', error);
       }
     };
     fetchData();
-  }, [dispatch]);
+  }, [dispatch, pinCode]);
 
   useEffect(() => {
     if (products && products.length > 0) {
@@ -50,6 +45,10 @@ const Product = () => {
       setUniqueCategories([...categoriesSet]);
     }
   }, [products]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPage]);
 
   const handleNextPage = () => {
     setCurrentPage(prevPage => prevPage + 1);
@@ -68,7 +67,7 @@ const Product = () => {
   };
 
   if (!dataLoaded) {
-    return <Loading />; // Show loading indicator until data is loaded
+    return <Loading />;
   }
 
   if (loading) {
@@ -118,7 +117,7 @@ const Product = () => {
         <div className="all-product-page-grid">
           {currentProducts.map(product => (
             <div key={product?._id}>
-              {product?.images && product?.title && product?.price && ( // Check if all required fields are present
+              {product?.images && product?.title && product?.price && (
                 <ProductCard
                   id={product?._id}
                   image={product?.images[0]}
@@ -146,5 +145,5 @@ const Product = () => {
     </div>
   );
 }
-export default Product;
 
+export default Product;

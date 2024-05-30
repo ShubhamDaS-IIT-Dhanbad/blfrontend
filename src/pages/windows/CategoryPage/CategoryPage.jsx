@@ -40,9 +40,12 @@ const CategoryPage = () => {
     fetchProducts();
   }, [category]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPage]);
+
   const productsPerPage = 50;
 
-  // Flatten the categories arrays from all products and then ensure uniqueness
   const uniqueBrands = [...new Set(products.map(product => product.brand))];
   const uniqueCategories = [
     ...new Set(products.flatMap(product => product.category))
@@ -100,12 +103,12 @@ const CategoryPage = () => {
         <div className="category-page-pagination-buttons">
           {currentPage > 1 && (
             <button className="category-page-pagination-button" onClick={handlePrevPage}>
-              Previous
+            Previous
             </button>
           )}
           {indexOfLastProduct < filteredProducts.length && (
             <button className="category-page-pagination-button" onClick={handleNextPage}>
-              Next
+            Next
             </button>
           )}
         </div>

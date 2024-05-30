@@ -20,7 +20,7 @@ function LoginPage() {
             if (response.status === 200) {
                 console.log(response)
                 localStorage.setItem('retailerData', JSON.stringify(response));
-                navigate("/retailer");
+                navigate("/retailer/products");
             } else {
                 setError('Login failed. Please check your phone number and try again.');
             }

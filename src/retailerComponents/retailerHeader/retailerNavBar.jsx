@@ -36,7 +36,7 @@ function RetailerNavbar({ shopData }) {
                 <div className='retailer-navbar'>
                     <div className='retailer-nav-logo'>
                         <div id='retailer-FaCloudversify'><FaCloudversify id="retailer-FaCloudversify" /></div>
-                        <p><Link to="/" className="retailer-link-properties">Bharat | Shop</Link></p>
+                        <p><Link to="/" className="retailer-link-properties">Bharat | Linker</Link></p>
                     </div>
                     <div className="retailer-search-box">
                         <button id='retailer-FaSearch'><FaSearch id='retailer-FaSearchIcon' /></button>
@@ -68,10 +68,10 @@ function RetailerNavbar({ shopData }) {
                     </ul>
                 </div>
                 <ul className='retailer-nav-menu-left'>
-                    <li onClick={() => setMenu("RETAILER")}>
+                    {/* <li onClick={() => setMenu("RETAILER")}>
                         <Link className="retailer-link-properties" to="#" aria-label="Retailer">RETAILER</Link>
                         {menu === "RETAILER" && <div className='retailer-nav-menu-left-hr-line' style={{ backgroundColor: "#9d94ff" }}></div>}
-                    </li>
+                    </li> */}
                     <li onClick={() => setMenu("PRODUCTS")}>
                         <Link className="retailer-link-properties" to="/retailer/products" aria-label="Products">PRODUCTS</Link>
                         {menu === "PRODUCTS" && <div className='retailer-nav-menu-left-hr-line' style={{ backgroundColor: "#59adf6" }}></div>}
@@ -90,10 +90,10 @@ function RetailerNavbar({ shopData }) {
                         <Link className="retailer-link-properties" to={"retailer/shop"} aria-label="Shop">SHOP</Link>
                         {menu === "SHOP" && <div className='retailer-nav-menu-left-hr-line' style={{ backgroundColor: "red" }}></div>}
                     </li>
-                    <li onClick={() => setMenu("CONTACT")}>
+                    {/* <li onClick={() => setMenu("CONTACT")}>
                         <Link className="retailer-link-properties" to="/contact" aria-label="Contact">CONTACT</Link>
                         {menu === "CONTACT" && <div className='retailer-nav-menu-left-hr-line' style={{ backgroundColor: "#c780e8" }}></div>}
-                    </li>
+                    </li> */}
                 </ul>
 
             </div>

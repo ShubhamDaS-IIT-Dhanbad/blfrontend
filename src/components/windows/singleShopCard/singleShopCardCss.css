@@ -155,7 +155,7 @@
   .category-page-grid {
     grid-template-columns: repeat(4, 12rem);
   }
-  .single-shop-page{
+  .category-nav-container{
    min-height: 1000px;
    background-color: aqua;
   }

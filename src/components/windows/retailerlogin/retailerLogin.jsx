@@ -19,10 +19,11 @@ function LoginPage() {
         try {
             const response = await axios.post('http://localhost:12000/api/v1/retailer/login', { phoneNumber, password });
             if (response.status === 200) {
-                localStorage.setItem('retailerData', JSON.stringify(response.data));
+                console.log(response)
+                localStorage.setItem('retailerData', JSON.stringify(response));
                 navigate("/retailer/products");
             } else {
-                setError('Login failed. Please check your phone number and password and try again.');
+                setError('Login failed. Please check your phone number and try again.');
             }
         } catch (error) {
             setError(`Error: ${error.response?.data?.message || error.message}`);
@@ -65,7 +66,7 @@ function LoginPage() {
                             <label htmlFor="password" className="sr-only">Password</label>
                             <input
                                 type="password"
-                                 id="phone-number"
+                                id="password"
                                 placeholder="Password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}

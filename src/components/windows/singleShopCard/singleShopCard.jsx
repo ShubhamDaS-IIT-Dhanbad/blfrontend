@@ -102,7 +102,7 @@ const CategoryPage = () => {
     return (
         <div className="single-shop-page">
             <Helmet>
-                <title>Category Page</title>
+                <title>Shop Page</title>
                 <meta name="description" content="Description of your category page" />
             </Helmet>
             <div className="single-shop-container-2">

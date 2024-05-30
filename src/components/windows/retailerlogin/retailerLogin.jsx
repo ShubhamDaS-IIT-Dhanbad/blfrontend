@@ -17,7 +17,7 @@ function LoginPage() {
         setIsLoading(true);
 
         try {
-            const response = await axios.post('http://localhost:12000/api/v1/retailer/login', { phoneNumber, password });
+            const response = await axios.post('https://bharat-lbackend.vercel.app/api/v1/retailer/login', { phoneNumber, password });
             if (response.status === 200) {
                 console.log(response)
                 localStorage.setItem('retailerData', JSON.stringify(response));

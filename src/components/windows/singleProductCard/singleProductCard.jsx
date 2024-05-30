@@ -100,7 +100,7 @@ const ProductDetails = () => {
                             </div>
                             <div className="ProductDetails-right">
                                 <div className="detailsBlock-1">
-                                    <h2>{productDetail.title}</h2>
+                                    <div className="detailsBlock-1-title">{productDetail.title}</div>
                                     <p>Product # {productDetail._id}</p>
                                 </div>
                                 <div className="detailsBlock-2">

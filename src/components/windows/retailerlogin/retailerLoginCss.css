@@ -1,46 +1,24 @@
-/* loginPage.css */
+/* retailerLoginCss.css */
 
-#login-parent-container {
+#retailer-login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f5f5f5;
+    background-color: #3a3636;
 }
 
-#container {
-    background: #fff;
-    width: 500px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+@media (max-width: 1080px) {
 
-#login-container {
-    padding: 30px;
-    width: 100%;
-}
-
-#left-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-#left-form-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+    #retailer-login-container {
+        min-height: 1800px;
+    }
 }
 
 h1 {
     margin-bottom: 20px;
-    color: #333;
+    font-weight: 700;
+    color: #ffffff;
 }
 
 .error {
@@ -48,20 +26,8 @@ h1 {
     margin-bottom: 15px;
 }
 
-#social-media-logo {
-    display: flex;
-    justify-content: space-between;
-    width: 60%;
-    margin-bottom: 20px;
-}
-
-#social-media-logo a {
-    text-decoration: none;
-    color: #333;
-    font-size: 24px;
-}
-
-input[type="tel"] {
+input[type="tel"],
+input[type="password"] {
     width: 80%;
     padding: 10px;
     margin-bottom: 15px;
@@ -70,7 +36,7 @@ input[type="tel"] {
     font-size: 16px;
 }
 
-#forget-mobile-number {
+#forget-password-link {
     align-self: flex-start;
     margin-left: 10%;
     margin-bottom: 20px;
@@ -78,7 +44,7 @@ input[type="tel"] {
     text-decoration: none;
 }
 
-#forget-mobile-number:hover {
+#forget-password-link:hover {
     text-decoration: underline;
 }
 
@@ -97,7 +63,7 @@ input[type="tel"] {
     background-color: #0056b3;
 }
 
-.signup-class {
+.signup-link {
     margin-top: 20px;
     width: 100%;
     display: flex;
@@ -112,11 +78,11 @@ input[type="tel"] {
     cursor: pointer;
 }
 
-#toggle-signup-button .login-link-properties {
+#toggle-signup-button .signup-link-properties {
     text-decoration: none;
     color: inherit;
 }
 
-#toggle-signup-button:hover .login-link-properties {
+#toggle-signup-button:hover .signup-link-properties {
     text-decoration: underline;
 }

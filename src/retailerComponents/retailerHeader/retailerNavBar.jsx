@@ -86,10 +86,10 @@ function RetailerNavbar({ shopData }) {
                             {menu === "PRESCRIPTION" && <div className='retailer-nav-menu-left-hr-line' style={{ backgroundColor: "#ffb480" }}></div>}
                         </li>
                     )}
-                    <li onClick={() => setMenu("SHOP")}>
+                    {/* <li onClick={() => setMenu("SHOP")}>
                         <Link className="retailer-link-properties" to={"retailer/shop"} aria-label="Shop">SHOP</Link>
                         {menu === "SHOP" && <div className='retailer-nav-menu-left-hr-line' style={{ backgroundColor: "red" }}></div>}
-                    </li>
+                    </li> */}
                     {/* <li onClick={() => setMenu("CONTACT")}>
                         <Link className="retailer-link-properties" to="/contact" aria-label="Contact">CONTACT</Link>
                         {menu === "CONTACT" && <div className='retailer-nav-menu-left-hr-line' style={{ backgroundColor: "#c780e8" }}></div>}

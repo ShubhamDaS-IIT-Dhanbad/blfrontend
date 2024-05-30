@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
+import { FaCloudUploadAlt } from "react-icons/fa";
 import './uploadCss.css';
 
 function UploadProduct({ id, pinCodes }) {
-    console.log("id", id, pinCodes);
     const [formData, setFormData] = useState({
         title: '',
         description: '',
@@ -94,7 +94,6 @@ function UploadProduct({ id, pinCodes }) {
                     'Content-Type': 'multipart/form-data',
                 },
             });
-            console.log('Product uploaded successfully', response.data);
             setFormData({
                 title: '',
                 description: '',
@@ -128,25 +127,23 @@ function UploadProduct({ id, pinCodes }) {
         fileInputRef.current.click();
     };
 
+   
     return (
         <div className="upload-container">
             <form className="row g-3 upload-form-container" onSubmit={handleSubmit}>
-                <div className="left-container"></div>
-                <div className="right-container">
-                    <header>
-                        <h1>Stand Out: Upload Your Product Listings Here!</h1>
+                <div className="upload-container-form-div">
+                    <header className='upload-container-form-div-header'>
+                        <h1>STAND OUT: UPLOAD YOUR PRODUCT LISTING HERE!</h1>
                         {errorMessage && <div className="error-message">{errorMessage}</div>}
-                        {showSuccessAlert && <div className="success-message">Product uploaded successfully!</div>}
+                        {showSuccessAlert && <div className="success-message">{alert("Product uploaded successfully!")}</div>}
                         <div className="set">
                             <div className="pets-name">
-                                <label htmlFor="pets-name">Title</label>
+                                <label htmlFor="pets-name">TITLE</label>
                                 <input id="pets-name" placeholder="Product Title" type="text" name="title" value={title} onChange={handleChange} required />
                             </div>
-                            <div className="pets-photo">
-                                <button type="button" id="pets-upload" onClick={handleClick}>
-                                    <i className="fas fa-camera-retro"></i>
-                                </button>
-                                <label htmlFor="pets-upload">Upload Images</label>
+                            <div className="upload-container-photo">
+                                <label htmlFor="pets-upload">UPLOAD IMAGES(MAX-5)</label>
+                                <FaCloudUploadAlt size={45} className="FaCloudUploadAlt" color='white' onClick={handleClick}/>
                                 <input
                                     type="file"
                                     name="images"
@@ -160,7 +157,7 @@ function UploadProduct({ id, pinCodes }) {
                         </div>
                         <div className="set">
                             <div className="pets-breed">
-                                <label htmlFor="pets-breed">Description</label>
+                                <label htmlFor="pets-breed">DESCRIPTION</label>
                                 <textarea
                                     id="pets-breed"
                                     placeholder="Write description"
@@ -173,14 +170,14 @@ function UploadProduct({ id, pinCodes }) {
                                 />
                             </div>
                             <div className="pets-birthday">
-                                <label htmlFor="pets-birthday">Quantity Available</label>
+                                <label htmlFor="pets-birthday">QUANTITY AVAILABLE</label>
                                 <input id="pets-birthday" type="number" name="quantityAvailable" value={quantityAvailable} onChange={handleChange} required placeholder="0" />
                             </div>
                         </div>
                         <div className="set">
-                            <div className="pets-gender">
-                                <label htmlFor="pet-gender-female">Gender Target (optional)</label>
-                                <div className="radio-container">
+                            <div className="upload-gender-target">
+                                <label htmlFor="pet-gender-female">GENDER TARGET (optional)</label>
+                                <div className="upload-gender-target-radio-container">
                                     <input id="pet-gender-male" type="radio" value="M" name="genderTarget" checked={genderTarget === 'M'} onChange={handleChange} />
                                     <label htmlFor="pet-gender-male">Male</label>
                                     <input id="pet-gender-female" type="radio" value="F" name="genderTarget" checked={genderTarget === 'F'} onChange={handleChange} />
@@ -189,36 +186,37 @@ function UploadProduct({ id, pinCodes }) {
                                     <label htmlFor="pet-gender-any">Any</label>
                                 </div>
                             </div>
-                            <div className="pets-spayed-neutered">
-                                <label htmlFor="featuredProduct">Featured Product</label>
-                                <div className="checkbox-container">
+                            <div className="upload-featured-produt-container">
+                            <div className="checkbox-container">
                                     <input id="featuredProduct" name="featuredProduct" type="checkbox" checked={featuredProduct} onChange={handleChange} />
                                 </div>
+                                <label htmlFor="featuredProduct">FEATURED PRODUCT</label>
+                                
                             </div>
                         </div>
                         <div className="set">
                             <div className="pets-breed">
-                                <label htmlFor="price">Price</label>
+                                <label htmlFor="price">PRICE</label>
                                 <input id="price" type="number" placeholder="Price" name="price" value={price} onChange={handleChange} required />
                             </div>
                             <div className="pets-birthday">
-                                <label htmlFor="discountedPrice">Discounted Price</label>
+                                <label htmlFor="discountedPrice">DISCOUNTED PRICE</label>
                                 <input id="discountedPrice" type="number" name="discountedPrice" placeholder="Discounted Price" value={discountedPrice} onChange={handleChange} required />
                             </div>
                         </div>
                         <div className="set">
                             <div className="pets-breed">
-                                <label htmlFor="category">Category</label>
+                                <label htmlFor="category">CATEGORY (comma seperated)</label>
                                 <input id="category" type="text" name="category" value={category} onChange={handleChange} required />
                             </div>
                             <div className="pets-birthday">
-                                <label htmlFor="brand">Brand</label>
+                                <label htmlFor="brand">BRAND</label>
                                 <input id="brand" type="text" name="brand" value={brand} onChange={handleChange} required />
                             </div>
                         </div>
                         <div className="set">
                             <div className="pets-breed">
-                                <label htmlFor="keywords">Keywords (comma separated):</label>
+                                <label htmlFor="keywords">KEYWORDS (comma separated)</label>
                                 <input id="keywords" type="text" name="keywords" value={keywords} onChange={handleChange} />
                             </div>
                         </div>

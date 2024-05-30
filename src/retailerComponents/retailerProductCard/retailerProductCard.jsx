@@ -16,7 +16,6 @@ function RetailerProductCard({ id, image, title, price }) {
             setIsDeleting(true); // Set the loading state to true
             try {
                 const response = await axios.post(`http://localhost:12000/api/v1/product/deleteproduct/${id}`);
-                console.log("Product deleted successfully");
                 alert("Product deleted successfully");
             } catch (error) {
                 console.error("Error deleting product:", error);

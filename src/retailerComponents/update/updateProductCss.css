@@ -1,27 +1,27 @@
-.upload-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f9f9f9;
-    padding: 20px;
+.update-container {
+    background-color: rgb(43, 40, 40);
+    display: flex;align-items: center;justify-content: center;
+    color: white;
+    padding: 40px;
 }
 
-.upload-form-container {
+.update-form-container {
     display: flex;
     flex-direction: column;
-    background-color: #fff;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ 
     width: 100%;
 }
-
-.form-header {
-    text-align: center;
-    margin-bottom: 20px;
+.update-form-header{
+    display: flex;justify-content: center;align-items: center;
 }
-
+.update-form-header h1{
+    font-weight: 800;
+}
+.update-form-container-upload{
+    margin-top: 20px;display: flex;
+    gap: 10px;align-items: center;
+}
 .error-message {
     color: red;
     font-weight: bold;

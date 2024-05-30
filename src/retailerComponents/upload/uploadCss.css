@@ -1,137 +1,41 @@
-.upload-container {
-  width: 100vw;
-  background-color: #171A2B;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.upload-form-container {
-  width: 100%;
-  min-height: 100vh;
-  background-color: #F7B1AB;
-  display: flex;
-}
-
-.left-container {
-  background: #807182;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  width: 30%;
-}
-
-.right-container {
-  background: #F8B7B0;
-  width: 70%;
-}
-
-.right-container header {
+.upload-container{
+  background-color: rgb(43, 40, 40);
+  display: flex;align-items: center;justify-content: center;
+  color: white;
   padding: 40px;
 }
-
-.right-container h1 {
-  color: rgba(0, 0, 0, .8);
-  font-size: 28px;
-  font-weight: 600;
-  margin-bottom: 20px;
+.upload-footer{
+  display: flex;justify-content: center;align-items: center;
+  &:hover{
+    scale: 1.1;
+  }
 }
-
-.right-container .set {
+.upload-container-form-div-header {
+  width: 80vw;
+}
+.upload-container-form-div-header h1{
   display: flex;
-  justify-content: space-between;
-  margin: 10px 0;
+  justify-content: center;align-items: center;
+  font-size: 32px;font-weight: 990;
 }
-
-.right-container input[type="text"],
-.right-container input[type="number"],
-.right-container textarea {
-  border: 1px solid rgba(0, 0, 0, .1);
-  border-radius: 4px;
-  height: 38px;
-  padding-left: 5px;
-  width: 48%;
-}
-
-.right-container input[type="file"] {
-  display: none;
-}
-
-.right-container label {
-  color: rgba(0, 0, 0, .8);
-  margin-bottom: 5px;
-}
-
-.right-container .pets-photo {
-  align-items: center;
-  display: flex;
-}
-
-.right-container .pets-photo button {
-  border: none;
-  border-radius: 50%;
-  height: 38px;
-  margin-right: 10px;
-  outline: none;
-  width: 38px;
-}
-
-.right-container .pets-photo button i {
-  color: rgba(0, 0, 0, .8);
-  font-size: 16px;
-}
-
-.right-container .radio-container {
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, .1);
-  border-radius: 4px;
-  display: flex;
-  padding: 5px;
-}
-
-.right-container .radio-container label {
-  background: transparent;
-  border: 1px solid transparent;
-  border-radius: 2px;
-  height: 26px;
-  line-height: 26px;
-  padding: 0 10px;
-  text-align: center;
-  transition: .2s all ease-in-out;
-}
-
-.right-container .radio-container input[type="radio"] {
-  display: none;
-}
-
-.right-container .radio-container input[type="radio"]:checked + label {
-  background: #F7B1AB;
-  border: 1px solid rgba(0, 0, 0, .1);
-}
-
-.upload-footer {
-  background-color: #171A2B;
-  border-radius: 5px;
+.upload-container-photo{
   margin-top: 20px;
-  padding: 20px;
-  text-align: center;
+  display: flex;align-items: center;
+  gap: 10px;
 }
-
-.upload-footer button {
-  background-color: #F7B1AB;
-  border: none;
-  border-radius: 19px;
-  color: #fff8f7;
-  cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  font-weight: 800;
-  height: 38px;
-  line-height: 38px;
-  width: 120px;
-  transition: background-color 0.3s ease-in-out;
+.FaCloudUploadAlt{
+  &:hover{
+    cursor: pointer;
+   scale: 1.1;
+  }
 }
-
-.upload-footer button:hover {
-  background-color: #807182;
+.upload-gender-target{
+  display: flex;gap: 50px;
+}
+.upload-gender-target-radio-container{
+  display: flex;gap: 10px;
+}
+.upload-featured-produt-container{
+  display: flex;gap: 10px;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './retailerLoginCss.css';
@@ -10,6 +10,13 @@ function LoginPage() {
     const [isLoading, setIsLoading] = useState(false);
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const retailerData = localStorage.getItem('retailerData');
+        if (retailerData) {
+            navigate('/retailer/products');
+        }
+    }, [navigate]);
 
     const validatePhoneNumber = (phone) => {
         const phoneRegex = /^[6-9]\d{9}$/;
@@ -30,8 +37,8 @@ function LoginPage() {
                 { phoneNumber, password }
             );
             if (response.status === 200) {
-                localStorage.setItem('retailerData', JSON.stringify(response));
-                navigate("/retailer/products");
+                localStorage.setItem('retailerData', JSON.stringify(response.data));
+                navigate('/retailer/products');
             } else {
                 setError('Login failed. Please check your phone number and password.');
             }
@@ -44,32 +51,33 @@ function LoginPage() {
 
     return (
         <div id='retailer-login-container'>
-        <div id="retailee-left-form">
-            <form id="left-form-form" onSubmit={handleSubmit}>
-                <h1>LogIn - RETAILER</h1>
-                {error && <div className="error">{error}</div>}
-                <input
-                    type="tel"
-                    id="phone-number"
-                    placeholder="Mobile Number"
-                    value={phoneNumber}
-                    onChange={(e) => setMobileNumber(e.target.value)}
-                    required
-                />
-                <input
-                    type="password"
-                    id="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-                <button type="submit" id="login-button" disabled={isLoading}>
-                    {isLoading ? 'Logging in...' : 'Log In'}
-                </button>
-            </form>
-        </div>
+            <div id="retailer-left-form">
+                <form id="left-form-form" onSubmit={handleSubmit}>
+                    <h1>Log In - RETAILER</h1>
+                    {error && <div className="error">{error}</div>}
+                    <input
+                        type="tel"
+                        id="phone-number"
+                        placeholder="Mobile Number"
+                        value={phoneNumber}
+                        onChange={(e) => setMobileNumber(e.target.value)}
+                        required
+                    />
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                    <button type="submit" id="login-button" disabled={isLoading}>
+                        {isLoading ? 'Logging in...' : 'Log In'}
+                    </button>
+                </form>
+            </div>
         </div>
     );
 }
+
 export default LoginPage;

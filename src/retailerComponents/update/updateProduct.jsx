@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { FaCloudUploadAlt } from "react-icons/fa";
 import './updateProductCss.css';
 
 function UpdateProduct({ pinCodes }) {
@@ -93,24 +94,23 @@ function UpdateProduct({ pinCodes }) {
     };
 
     return (
-        <div className="upload-container">
-            <form className="upload-form-container" onSubmit={handleSubmit}>
-                <div className="form-header">
-                    <h1>Update Your Product</h1>
+        <div className="update-container">
+            <form className="update-form-container" onSubmit={handleSubmit}>
+                <div className="update-form-header">
+                    <h1>STAND STILL: UPDATE YOUR PRODUCT</h1>
                     {errorMessage && <div className="error-message">{errorMessage}</div>}
                     {showSuccessAlert && <div className="success-message">Product updated successfully!</div>}
                 </div>
                 <div className="form-fields">
                     <div className="set">
                         <div className="pets-name">
-                            <label htmlFor="pets-name">Title</label>
-                            <input id="pets-name" placeholder="Product Title" value={title} onChange={(e) => setTitle(e.target.value)} />
+
+                            <label htmlFor="pets-name">TITLE</label>
+                            <input id="pets-name" placeholder="Product Title" type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} />
                         </div>
-                        <div className="pets-photo">
-                            <button type="button" id="pets-upload" onClick={() => document.getElementById('file-input').click()}>
-                                <i className="fas fa-camera-retro"></i>
-                            </button>
-                            <label htmlFor="pets-upload">Upload Images</label>
+                        <div className="update-form-container-upload">
+                            <label htmlFor="pets-upload">UPLOAD IMAGES(MAX-5)</label>
+                                <FaCloudUploadAlt size={45} className="FaCloudUploadAlt" color='white' onClick={() => document.getElementById('file-input').click()}/>
                             <input
                                 type="file"
                                 id="file-input"
@@ -122,18 +122,18 @@ function UpdateProduct({ pinCodes }) {
                     </div>
                     <div className="set">
                         <div className="pets-breed">
-                            <label htmlFor="pets-breed">Description</label>
+                            <label htmlFor="pets-breed">DESCRIPTION</label>
                             <textarea id="pets-breed" value={description} onChange={(e) => setDescription(e.target.value)} />
                         </div>
                         <div className="pets-birthday">
-                            <label htmlFor="pets-birthday">Quantity Available</label>
+                            <label htmlFor="pets-birthday">QUANTITY AVAILABLE</label>
                             <input id="pets-birthday" type="number" value={quantityAvailable} onChange={(e) => setQuantityAvailable(e.target.value)} />
                         </div>
                     </div>
                     <div className="set">
                         <div className="pets-gender">
-                            <label>Gender Target (optional)</label>
-                            <div className="radio-container">
+                            <label>GENDER TARGET(optional)</label>
+                            <div className="update-product-gender-target">
                                 <input id="pet-gender-male" type="radio" value="M" name="genderTarget" checked={genderTarget === 'M'} onChange={(e) => setGenderTarget(e.target.value)} />
                                 <label htmlFor="pet-gender-male">Male</label>
                                 <input id="pet-gender-female" type="radio" value="F" name="genderTarget" checked={genderTarget === 'F'} onChange={(e) => setGenderTarget(e.target.value)} />
@@ -143,7 +143,7 @@ function UpdateProduct({ pinCodes }) {
                             </div>
                         </div>
                         <div className="pets-spayed-neutered">
-                            <label htmlFor="featuredProduct">Featured Product</label>
+                            <label htmlFor="featuredProduct">FEATURED PRODUCT</label>
                             <div className="checkbox-container">
                                 <input id="featuredProduct" name="featuredProduct" type="checkbox" checked={featuredProduct} onChange={(e) => setFeaturedProduct(e.target.checked)} />
                             </div>
@@ -155,23 +155,23 @@ function UpdateProduct({ pinCodes }) {
                             <input id="price" type="number" value={price} onChange={(e) => setPrice(e.target.value)} />
                         </div>
                         <div className="pets-birthday">
-                            <label htmlFor="discountedPrice">Discounted Price</label>
+                            <label htmlFor="discountedPrice">DISCOUNTED PRICE</label>
                             <input id="discountedPrice" type="number" value={discountedPrice} onChange={(e) => setDiscountedPrice(e.target.value)} />
                         </div>
                     </div>
                     <div className="set">
                         <div className="pets-breed">
-                            <label htmlFor="category">Category</label>
+                            <label htmlFor="category">CATEGORY</label>
                             <input id="category" type="text" value={category} onChange={(e) => setCategory(e.target.value)} />
                         </div>
                         <div className="pets-birthday">
-                            <label htmlFor="brand">Brand</label>
+                            <label htmlFor="brand">BRAND</label>
                             <input id="brand" type="text" value={brand} onChange={(e) => setBrand(e.target.value)} />
                         </div>
                     </div>
                     <div className="set">
                         <div className="pets-breed">
-                            <label htmlFor="keywords">Keywords (comma separated)</label>
+                            <label htmlFor="keywords">KEYWORDS (comma separated)</label>
                             <input id="keywords" type="text" value={keywords} onChange={(e) => setKeywords(e.target.value)} />
                         </div>
                     </div>

@@ -142,7 +142,7 @@ const ProductDetails = () => {
                                     <p>
                                         Status:
                                         <b className={productDetail?.quantityAvailable > 0 ? "greenColor" : "redColor"}>
-                                            {productDetail?.quantityAvailable > 0 ? "In Stock" : "Out of Stock"}
+                                           In Stock
                                         </b>
                                     </p>
                                 </div>

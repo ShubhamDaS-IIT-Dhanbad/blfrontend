@@ -8,7 +8,6 @@ import FilterSection from '../filterSection/filterSection.jsx';
 
 const SearchProduct = () => {
   const { searchedProducts, loading, error } = useSelector(state => state.products);
-  console.log("hiiii", searchedProducts, loading)
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 32;
   const [selectedBrands, setSelectedBrands] = useState([]);
@@ -30,6 +29,10 @@ const SearchProduct = () => {
       setUniqueCategories([...categoriesSet]);
     }
   }, [searchedProducts]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPage]);
 
   const handleNextPage = () => {
     setCurrentPage(prevPage => prevPage + 1);

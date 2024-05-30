@@ -46,7 +46,7 @@ const CategoryPage = () => {
                     setShopDetails(shopAction?.payload);
                     setProductDetails(product?.products);
                     setRetailerDetails(retailer.retailer);
-                    const shopImages = shopAction?.payload.image;
+                    const shopImages = shopAction?.payload.images;
                     setImages(shopImages);
                     setSelectedImage(shopImages?.[0]); // Select the first image initially
                 }

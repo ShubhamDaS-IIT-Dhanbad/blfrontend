@@ -33,7 +33,7 @@ function ShopCard({ shop }) {
         <div className={`shop-card`}>
              {/* ${shop.shopStatus ? 'shop-card-active' : 'shop-card-inactive'} */}
             <div className="shop-card-top" onClick={() => navigate(`/shop/${shop._id}`)}>
-                <img className="shop-card-image" src={shop?.image[0]} alt="Product" />
+                <img className="shop-card-image" src={shop?.images[0]} alt="Product" />
             </div>
             <div className="shop-card-shop-name-div">
                 <span className="shop-card-shop-name">{shop?.shopName?.toUpperCase()}</span>

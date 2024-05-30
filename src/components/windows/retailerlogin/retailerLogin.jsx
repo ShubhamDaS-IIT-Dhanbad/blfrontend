@@ -35,7 +35,7 @@ function LoginPage() {
             const response = await axios.post(
                 `https://bharat-lbackend.vercel.app/api/v1/retailer/login`, 
                 { phoneNumber, password }
-            );
+            );console.log(response)
             if (response.status === 200) {
                 localStorage.setItem('retailerData', JSON.stringify(response.data));
                 navigate('/retailer/products');

@@ -30,7 +30,6 @@
   gap: 5px;
   align-items: center;
   padding-bottom: 15px;
-  margin-top: -12px;
 }
 
 .single-shop-container-2 {
@@ -169,5 +168,8 @@
 @media (max-width: 1080px) {
   .category-page-grid {
     grid-template-columns: repeat(4, 12rem);
+  }
+  .single-shop-page{
+    min-height: 1900px;
   }
 }

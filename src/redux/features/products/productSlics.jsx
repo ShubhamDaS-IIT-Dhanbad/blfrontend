@@ -41,8 +41,9 @@ export const fetchProductDetails = createAsyncThunk(
 export const fetchSearchedProducts = createAsyncThunk(
   'products/fetchSearchedProducts',
   async ({ keywords }) => {
-    try {console.log("shubham",keywords)
+    try {console.log("shubhakkkm",keywords)
       const response = await fetch(`https://bharat-lbackend.vercel.app/api/v1/product/products?keyword=${keywords}`);
+      console.log(response)
       if (!response.ok) {
         throw new Error('Failed to fetch products');
       }

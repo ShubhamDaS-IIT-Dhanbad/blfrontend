@@ -75,6 +75,11 @@
     }
     .search-empty-message{   
         min-height: 1910px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        font-weight: 900;
     }
 }
 

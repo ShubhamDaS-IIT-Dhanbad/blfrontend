@@ -5,6 +5,7 @@ import './retailerLoginCss.css';
 
 function LoginPage() {
     const [phoneNumber, setMobileNumber] = useState('');
+    const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
@@ -16,13 +17,12 @@ function LoginPage() {
         setIsLoading(true);
 
         try {
-            const response = await axios.post('http://localhost:12000/api/v1/retailer/login', { phoneNumber });
+            const response = await axios.post('http://localhost:12000/api/v1/retailer/login', { phoneNumber, password });
             if (response.status === 200) {
-                console.log(response)
-                localStorage.setItem('retailerData', JSON.stringify(response));
+                localStorage.setItem('retailerData', JSON.stringify(response.data));
                 navigate("/retailer/products");
             } else {
-                setError('Login failed. Please check your phone number and try again.');
+                setError('Login failed. Please check your phone number and password and try again.');
             }
         } catch (error) {
             setError(`Error: ${error.response?.data?.message || error.message}`);
@@ -60,6 +60,15 @@ function LoginPage() {
                                 placeholder="Mobile Number"
                                 value={phoneNumber}
                                 onChange={(e) => setMobileNumber(e.target.value)}
+                                required
+                            />
+                            <label htmlFor="password" className="sr-only">Password</label>
+                            <input
+                                type="password"
+                                 id="phone-number"
+                                placeholder="Password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
                                 required
                             />
                             <Link to="/" id="forget-phone-number">

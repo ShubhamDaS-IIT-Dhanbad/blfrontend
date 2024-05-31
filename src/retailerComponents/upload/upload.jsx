@@ -76,17 +76,14 @@ function UploadProduct({ id, pinCodes }) {
         });
 
         keywords?.split(',').forEach((keyword, index) => {
-            data.append(`keyWords[${index}]`, keyword.trim());
-        });
+            data.append(`keyWords[${index}]`, keyword.trim());});
 
         images.forEach((image) => {
-            data.append('images', image);
-        });
+            data.append('images', image);});
 
         // Log the form data for debugging
         for (let [key, value] of data.entries()) {
-            console.log(key, value);
-        }
+            console.log(key, value);}
 
         try {
             const response = await axios.post(`https://bharat-lbackend.vercel.app/api/v1/product/addproduct`, data, {

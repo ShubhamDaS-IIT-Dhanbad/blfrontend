@@ -1,6 +1,6 @@
 .product-card {
     background-color: rgb(55, 53, 53);
-    width: 220px;
+    width: 210px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,12 +12,12 @@
     padding: 16px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
-@media (max-width: 1080px) {
+/* @media (max-width: 1080px) {
     .product-card {
-        width: 260px;
-        height: 350px;
+        width: 240px;
+        height: 390px;
     }
-}
+} */
 
 .product-card:hover {
     transform: scale(1.04);

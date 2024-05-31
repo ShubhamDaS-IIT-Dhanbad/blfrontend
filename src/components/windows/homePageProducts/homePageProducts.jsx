@@ -53,7 +53,7 @@ const HomePageCategoryProducts = ({ categories, products, loading }) => {
             {
                 breakpoint: 700,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 4,
                     slidesToScroll: 2,
                     initialSlide: 2
                 }
@@ -61,7 +61,7 @@ const HomePageCategoryProducts = ({ categories, products, loading }) => {
             {
                 breakpoint: 500,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 4,
                     slidesToScroll: 1
                 }
             }

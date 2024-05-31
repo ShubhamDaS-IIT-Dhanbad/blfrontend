@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import "./homePageProductsCss.css";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import Slider from 'react-slick';
@@ -12,16 +12,25 @@ const HomePageCategoryProducts = ({ categories, products, loading }) => {
     const [visibleCategories, setVisibleCategories] = useState(5); // Initially show 5 categories
     const [showMore, setShowMore] = useState(false); // State to manage "View More" button visibility
 
+    // Initialize slider refs for each category
     useEffect(() => {
-        setSliderRefs(Array(categories.length).fill().map((_, i) => sliderRefs[i] || React.createRef()));
-    }, [categories.length, products]);
+        setSliderRefs((refs) =>
+            Array(categories.length)
+                .fill()
+                .map((_, i) => refs[i] || React.createRef())
+        );
+    }, [categories.length]);
 
+    // Determine if "View More" button should be visible
     useEffect(() => {
-        // Determine if "View More" button should be visible
-        setShowMore(categories.length > visibleCategories && categories.slice(visibleCategories).some(item => {
-            const categoryProducts = products.filter(product => Array.isArray(product.category) && product.category.includes(item.category));
-            return categoryProducts.length >= 4;
-        }));
+        const hasMoreVisible = categories.length > visibleCategories &&
+            categories.slice(visibleCategories).some(item => {
+                const categoryProducts = products.filter(product =>
+                    Array.isArray(product.category) && product.category.includes(item.category)
+                );
+                return categoryProducts.length >= 4;
+            });
+        setShowMore(hasMoreVisible);
     }, [categories, visibleCategories, products]);
 
     const settings = {
@@ -52,7 +61,7 @@ const HomePageCategoryProducts = ({ categories, products, loading }) => {
             {
                 breakpoint: 500,
                 settings: {
-                    slidesToShow: 4,
+                    slidesToShow: 2,
                     slidesToScroll: 1
                 }
             }
@@ -70,7 +79,9 @@ const HomePageCategoryProducts = ({ categories, products, loading }) => {
     const handleViewMore = () => {
         const remainingCategories = categories.slice(visibleCategories);
         const nextVisibleCategories = remainingCategories.findIndex(item => {
-            const categoryProducts = products.filter(product => Array.isArray(product.category) && product.category.includes(item.category));
+            const categoryProducts = products.filter(product =>
+                Array.isArray(product.category) && product.category.includes(item.category)
+            );
             return categoryProducts.length >= 4;
         });
 
@@ -81,55 +92,66 @@ const HomePageCategoryProducts = ({ categories, products, loading }) => {
         }
     };
 
-    if (!loading) {
-        return (
-            <div className='home-page-category-products-container-parent'>
-                {categories.slice(0, visibleCategories).map((item, index) => {
-                    // Filter out categories with less than 3 associated products
-                    const categoryProducts = products.filter(product => Array.isArray(product.category) && product.category.includes(item.category));
-                    if (categoryProducts.length < 4) return null; // Skip rendering if less than 3 products for this category
-                    return (
-                        <div className='home-page-category-products-container' key={item.id}>
-                            <div className="home-page-category-products">
-                                <div className="home-page-category-products-left">
-                                    {item.category.toUpperCase()}
-                                    <span className="shop-by-category-name-bar"></span>
-                                </div>
-                            </div>
-
-                            <div className='slider-container'>
-                                <div className="row gx-1 sliderParent">
-                                    <Slider {...settings} ref={sliderRefs[index]} >
-                                        {categoryProducts.map(product => (
-                                            <div className='col-md-1 men-slider-columns' key={product._id}>
-                                                <ProductCard id={product._id} image={product.images[0]} title={product.title} price={product.price} />
-                                            </div>
-                                        ))}
-                                    </Slider>
-                                </div>
-                            </div>
-                            <div className="home-page-category-products-button-container">
-                                <button className="home-page-category-products-button" onClick={() => handleNextSlide(index)}>
-                                    <IoIosArrowBack size={25} fontWeight={100} color={"white"} />
-                                </button>
-                                <button className="home-page-category-products-button" onClick={() => handlePrevSlide(index)}>
-                                    <IoIosArrowForward size={25} fontWeight={100} color={"white"} />
-                                </button>
-                            </div>
-                        </div>
-                    );
-                })}
-                {showMore && (
-                    <div className="view-more-button-container">
-                        <button className="view-more-button" onClick={handleViewMore}>View More</button>
-                    </div>
-                )}
-            </div>
-        );
-    } else {
+    if (loading) {
         return <Loading />;
     }
+
+    return (
+        <div className='home-page-category-products-container-parent'>
+            {categories.slice(0, visibleCategories).map((item, index) => {
+                const categoryProducts = products.filter(product =>
+                    Array.isArray(product.category) && product.category.includes(item.category)
+                );
+                if (categoryProducts.length < 4) return null;
+                return (
+                    <div className='home-page-category-products-container' key={item.id}>
+                        <div className="home-page-category-products">
+                            <div className="home-page-category-products-left">
+                                {item.category.toUpperCase()}
+                                <span className="shop-by-category-name-bar"></span>
+                            </div>
+                        </div>
+
+                        <div className='slider-container'>
+                            <div className="row gx-1 sliderParent">
+                                <Slider {...settings} ref={sliderRefs[index]}>
+                                    {categoryProducts.map(product => (
+                                        <div className='col-md-1 men-slider-columns' key={product._id}>
+                                            <ProductCard
+                                                id={product._id}
+                                                image={product.images[0]}
+                                                title={product.title}
+                                                price={product.price}
+                                            />
+                                        </div>
+                                    ))}
+                                </Slider>
+                            </div>
+                        </div>
+                        <div className="home-page-category-products-button-container">
+                            <button
+                                className="home-page-category-products-button"
+                                onClick={() => handlePrevSlide(index)}
+                            >
+                                <IoIosArrowBack size={25} color={"white"} />
+                            </button>
+                            <button
+                                className="home-page-category-products-button"
+                                onClick={() => handleNextSlide(index)}
+                            >
+                                <IoIosArrowForward size={25} color={"white"} />
+                            </button>
+                        </div>
+                    </div>
+                );
+            })}
+            {showMore && (
+                <div className="view-more-button-container">
+                    <button className="view-more-button" onClick={handleViewMore}>View More</button>
+                </div>
+            )}
+        </div>
+    );
 };
 
 export default HomePageCategoryProducts;
-

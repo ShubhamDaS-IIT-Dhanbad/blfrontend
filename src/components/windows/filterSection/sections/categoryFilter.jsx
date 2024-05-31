@@ -3,8 +3,8 @@ import "./categoryFilterCss.css";
 
 const CategoryFilter = ({ categories, selectedCategories, onChange }) => {
   const handleCheckboxChange = (category) => {
-    if (selectedCategories.includes(category)) {
-      onChange(selectedCategories.filter(c => c !== category));
+    if (selectedCategories?.includes(category)) {
+      onChange(selectedCategories?.filter(c => c !== category));
     } else {
       onChange([...selectedCategories, category]);
     }

@@ -26,19 +26,14 @@ const initialData = [
 
 const Home = () => {
   const dispatch = useDispatch();
-  const pinCode = useSelector((state) => state.pinCode.pinCodes);
+  const pinCode = useSelector((state) => state.pinCode.pinCodes) ||"";
 
   const { products, loading: loadingProducts, error } = useSelector(state => state.products);
   const [loading, setLoading] = useState(true);
   const [uniqueCategories, setUniqueCategories] = useState([]);
 
   useEffect(() => {
-    // Scroll to the top of the page when the component mounts
     window.scrollTo(0, 0);
-    // const userDataString = localStorage.getItem('userData');
-    // const userData = userDataString ? JSON.parse(userDataString) : null;
-    // const pinCodesString = userData ? userData.pinCodes.join(', ') : "";
-    // const pinCode = pinCodesString ? pinCodesString : "";
     dispatch(fetchProducts({ pinCode }));
     setLoading(false);
   }, [dispatch]);
@@ -56,7 +51,7 @@ const Home = () => {
       setUniqueCategories([...categorySet].map((category, index) => ({ id: index + 1, category })));
     }
   }, [products]);
-
+console.log("caTEG",uniqueCategories,products)
   if (loadingProducts && loading) return <Loading />;
   if (error) return <div>Error: {error.message}</div>;
   return (
@@ -75,5 +70,4 @@ const Home = () => {
     </div>
   );
 };
-
 export default Home;

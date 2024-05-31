@@ -2,9 +2,10 @@ import React from 'react';
 import "./brandFilterCss.css";
 
 const BrandFilter = ({ brands, selectedBrands, onChange }) => {
+  console.log("koko",brands,selectedBrands)
   const handleCheckboxChange = (brand) => {
-    const updatedBrands = selectedBrands.includes(brand)
-      ? selectedBrands.filter(b => b !== brand)
+    const updatedBrands = selectedBrands?.includes(brand)
+      ? selectedBrands?.filter(b => b !== brand)
       : [...selectedBrands, brand];
     onChange(updatedBrands);
   };
@@ -17,7 +18,7 @@ const BrandFilter = ({ brands, selectedBrands, onChange }) => {
           <label key={brand} className="brand-checkbox-options-label">
             <input
               type="checkbox"
-              checked={selectedBrands.includes(brand)}
+              checked={selectedBrands?.includes(brand)}
               onChange={() => handleCheckboxChange(brand)}
             />
             {brand?.toUpperCase()}

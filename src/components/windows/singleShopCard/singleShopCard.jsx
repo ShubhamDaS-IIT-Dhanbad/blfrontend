@@ -96,6 +96,7 @@ const CategoryPage = () => {
         // Implement your logic to redirect to map
     };
 
+    console.log(filterProductsByBrand,filterProductsByCategory)
     if (loading) return <Loading />;
     if (error) return <div className="category-page-error-message">Error: {error}</div>;
 
@@ -133,7 +134,6 @@ const CategoryPage = () => {
                             />
                         ))}
                     </Carousel>
-                    
                 </div>
                 <div className="single-shop-container-3-2">
                     <div className="single-shop-container-3-2-retailer-name">{retailerDetails?.name?.toUpperCase()}</div>
@@ -162,16 +162,8 @@ const CategoryPage = () => {
                     </div>
                 </div>
             </div>
-           
             <div className='category-nav-container'>
-                <FilterSection
-                    brands={brands}
-                    categories={categories}
-                    selectedBrands={selectedBrand}
-                    selectedCategories={selectedCategory}
-                    onBrandChange={setSelectedBrand}
-                    onCategoryChange={setSelectedCategory}
-                />
+                
                 <div className="category-page-container">
                     <div className="category-page-grid">
                         {filteredProducts.length > 0 ? (

@@ -11,7 +11,7 @@ import Loading from "../../../components/windows/loading/loading.jsx";
 import FeaturedProduct from "../../../components/windows/featuredProduct/featuredProduct.jsx";
 import { fetchProducts } from '../../../redux/features/products/productSlics.jsx';
 
-import b2 from './b1.png';
+import b2 from './ba.jpg';
 import men from "./categoryImages/mens.jpg";
 import women from "./categoryImages/women.webp";
 import electronics from "./categoryImages/electronics.jpg";

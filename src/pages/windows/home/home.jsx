@@ -64,7 +64,6 @@ console.log("caTEG",uniqueCategories,products)
         <Carousal />
         <ShopByCategory data={initialData} />
         <HomePageProducts categories={uniqueCategories} products={products} loading={loadingProducts} />
-        <Banner imageUrl={b2} />
         <FeaturedProduct products={products} loading={loadingProducts} />
       </div>
     </div>

@@ -17,7 +17,7 @@ function ShopCard({ shop }) {
                     const userLat = position.coords.latitude;
                     const userLon = position.coords.longitude;
                     const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${userLat},${userLon}&destination=${shopLat},${shopLon}&travelmode=driving`;
-                    window.location.href = googleMapsUrl;
+                    window.open(googleMapsUrl, '_blank'); // Open in new tab
                 },
                 (error) => {
                     console.error("Error getting location", error);
@@ -31,7 +31,6 @@ function ShopCard({ shop }) {
 
     return (
         <div className={`shop-card`}>
-             {/* ${shop.shopStatus ? 'shop-card-active' : 'shop-card-inactive'} */}
             <div className="shop-card-top" onClick={() => navigate(`/shop/${shop._id}`)}>
                 <img className="shop-card-image" src={shop?.images[0]} alt="Product" />
             </div>
@@ -46,5 +45,6 @@ function ShopCard({ shop }) {
 }
 
 export default ShopCard;
+
 
 

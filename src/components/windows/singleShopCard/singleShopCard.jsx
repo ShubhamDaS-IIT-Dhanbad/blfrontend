@@ -93,10 +93,26 @@ const CategoryPage = () => {
     const filteredProducts = useMemo(() => filterProductsByBrand(filteredProductsByCategory, selectedBrand), [filteredProductsByCategory, selectedBrand, filterProductsByBrand]);
 
     const redirectToMap = () => {
-        // Implement your logic to redirect to map
+        const shopLat = shopDetails?.location?.lat; // Latitude
+        const shopLon = shopDetails?.location?.lon; // Longitude
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const userLat = position.coords.latitude;
+                    const userLon = position.coords.longitude;
+                    const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${userLat},${userLon}&destination=${shopLat},${shopLon}&travelmode=driving`;
+                    window.open(googleMapsUrl, '_blank'); // Open in new tab
+                },
+                (error) => {
+                    console.error("Error getting location", error);
+                    alert("Unable to retrieve your location. Please ensure location services are enabled.");
+                }
+            );
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
     };
 
-    console.log(filterProductsByBrand,filterProductsByCategory)
     if (loading) return <Loading />;
     if (error) return <div className="category-page-error-message">Error: {error}</div>;
 
